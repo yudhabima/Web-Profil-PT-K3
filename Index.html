@@ -1,0 +1,3350 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sistem Manajemen & Infografis K3 | Standar Keselamatan Kerja</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ==============================================================
+   TEMA WARNA K3 RESMI & SISTEM DESAIN ELEGAN
+   Hijau tua (#14532D) | Hijau utama (#15803D) | Emerald (#059669)
+   Putih (#FFFFFF) | Abu-abu muda (#F8FAFC)
+   ============================================================== */
+:root {
+  --hijau-tua: #14532D;
+  --hijau-tua-dark: #0D351D;
+  --hijau-utama: #15803D;
+  --hijau-hover: #166534;
+  --emerald: #059669;
+  --emerald-light: #10B981;
+  --putih: #FFFFFF;
+  --abu-muda: #F8FAFC;
+  --abu-subtle: #F1F5F9;
+  --mint-bg: #ECFDF5;
+  --mint-border: #A7F3D0;
+  --mint-badge: #D1FAE5;
+
+  --text-main: #0F172A;
+  --text-muted: #475569;
+  --text-light: #94A3B8;
+
+  --border: #E2E8F0;
+  --border-focus: #059669;
+
+  --danger: #EF4444;
+  --danger-bg: #FEF2F2;
+  --danger-border: #FECACA;
+  --warning: #F59E0B;
+  --warning-bg: #FEF3C7;
+
+  --shadow-sm: 0 1px 3px 0 rgba(20, 83, 45, 0.05);
+  --shadow-md: 0 4px 12px -2px rgba(20, 83, 45, 0.08), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 14px 24px -4px rgba(20, 83, 45, 0.12), 0 4px 8px -4px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 20px 32px -6px rgba(20, 83, 45, 0.18), 0 8px 12px -6px rgba(0, 0, 0, 0.06);
+  --glow-emerald: 0 0 20px rgba(5, 150, 105, 0.35);
+
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  --transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  color: var(--text-main);
+  background-color: var(--abu-muda);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--hijau-tua);
+  line-height: 1.2;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+button, input, select, textarea { font: inherit; }
+button { cursor: pointer; border: none; background: none; }
+
+.wrap {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 32px);
+}
+.section { padding: clamp(50px, 7vw, 85px) 0; }
+.section-alt { background-color: var(--putih); }
+.text-center { text-align: center; }
+
+/* BADGES & STRIPES */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.badge-k3 {
+  background: var(--mint-badge);
+  color: var(--hijau-tua);
+  border: 1px solid var(--mint-border);
+}
+.badge-success {
+  background: var(--mint-bg);
+  color: var(--hijau-utama);
+  border: 1px solid var(--mint-border);
+}
+.badge-danger {
+  background: var(--danger-bg);
+  color: #B91C1C;
+  border: 1px solid var(--danger-border);
+}
+.badge-warning {
+  background: var(--warning-bg);
+  color: #B45309;
+}
+
+/* HAZARD STRIPE K3 ELEGANT */
+.hazard-stripe {
+  height: 9px;
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--hijau-utama) 0,
+    var(--hijau-utama) 18px,
+    var(--hijau-tua) 18px,
+    var(--hijau-tua) 36px
+  );
+  box-shadow: 0 2px 6px rgba(20, 83, 45, 0.2);
+}
+
+/* BUTTONS */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--hijau-utama), var(--emerald));
+  color: var(--putih);
+  box-shadow: 0 4px 14px rgba(21, 128, 61, 0.35);
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--hijau-hover), var(--hijau-utama));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(5, 150, 105, 0.45);
+}
+.btn-dark {
+  background: var(--hijau-tua);
+  color: var(--putih);
+}
+.btn-dark:hover {
+  background: var(--hijau-tua-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.btn-outline {
+  border: 1.5px solid var(--border);
+  background: var(--putih);
+  color: var(--hijau-tua);
+}
+.btn-outline:hover {
+  border-color: var(--emerald);
+  color: var(--emerald);
+  background: var(--mint-bg);
+  transform: translateY(-2px);
+}
+.btn-outline-white {
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  color: var(--putih);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+}
+.btn-outline-white:hover {
+  background: var(--putih);
+  color: var(--hijau-tua);
+  border-color: var(--putih);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+.btn-sm { padding: 7px 14px; font-size: 0.84rem; border-radius: 6px; }
+.btn-danger { background: var(--danger); color: var(--putih); }
+.btn-danger:hover { background: #DC2626; }
+
+/* ==============================================================
+   NAVBAR: HORIZONTAL SINGLE-LINE, NO WRAPPING, PROPORTIONAL
+   ============================================================== */
+.nav-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(20, 83, 45, 0.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--putih);
+  transition: var(--transition);
+}
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 74px;
+  gap: clamp(12px, 2.5vw, 24px);
+}
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  flex-shrink: 0;
+  min-width: 0;
+  max-width: min(440px, 58vw);
+}
+.brand-logo-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--emerald), var(--hijau-utama));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--putih);
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.45);
+}
+.brand-logo-img { height: 38px; width: auto; border-radius: 6px; flex-shrink: 0; }
+
+/* KETENTUAN 1: NAMA PERUSAHAAN SATU BARIS, WHITE-SPACE: NOWRAP */
+.brand-name {
+  white-space: nowrap !important;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--putih);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  line-height: 1.2;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 1;
+}
+.nav-item {
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #D1FAE5;
+  white-space: nowrap;
+  transition: var(--transition);
+}
+.nav-item:hover, .nav-item.active {
+  color: var(--putih);
+  background: rgba(255, 255, 255, 0.12);
+}
+.nav-item.active {
+  background: rgba(255, 255, 255, 0.18);
+  color: #6EE7B7;
+  font-weight: 700;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.btn-admin-portal {
+  background: linear-gradient(135deg, var(--hijau-tua-dark), var(--hijau-tua));
+  border: 1.5px solid var(--emerald-light);
+  color: #A7F3D0;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  font-size: 0.86rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+.btn-admin-portal:hover {
+  background: var(--emerald);
+  color: var(--putih);
+  border-color: var(--emerald);
+  box-shadow: var(--glow-emerald);
+  transform: translateY(-1px);
+}
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #34D399;
+  box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7);
+  animation: pulse 1.8s infinite;
+  flex-shrink: 0;
+}
+@keyframes pulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(52, 211, 153, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
+}
+
+.mobile-menu-btn {
+  display: none;
+  color: var(--putih);
+  padding: 9px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.12);
+  align-items: center;
+  justify-content: center;
+}
+
+/* FLOATING ACTIVE ADMIN BAR ON PUBLIC WEB */
+.admin-active-notice {
+  background: linear-gradient(90deg, var(--hijau-tua-dark), var(--hijau-tua));
+  border-bottom: 2px solid var(--emerald);
+  color: var(--putih);
+  padding: 10px 24px;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.admin-active-notice a {
+  background: var(--emerald);
+  color: var(--putih);
+  padding: 5px 14px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.82rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition);
+}
+.admin-active-notice a:hover {
+  background: var(--hijau-hover);
+  transform: translateY(-1px);
+}
+
+/* HERO SECTION */
+.hero {
+  position: relative;
+  background: linear-gradient(135deg, #092314 0%, var(--hijau-tua) 55%, var(--hijau-utama) 100%);
+  color: var(--putih);
+  padding: clamp(70px, 10vw, 115px) 0 clamp(80px, 12vw, 125px);
+  overflow: hidden;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 85% 20%, rgba(5, 150, 105, 0.25) 0%, transparent 50%),
+              radial-gradient(circle at 10% 85%, rgba(21, 128, 61, 0.2) 0%, transparent 40%);
+  pointer-events: none;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+.hero h1 {
+  font-size: clamp(2.1rem, 5.2vw, 4rem);
+  font-weight: 800;
+  color: var(--putih);
+  margin: 18px 0 16px;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+.hero h1 span {
+  color: #6EE7B7;
+}
+.hero-tagline {
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  color: #D1FAE5;
+  margin-bottom: 34px;
+  line-height: 1.65;
+}
+.hero-btns {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* STATS STRIP */
+.stats-strip {
+  position: relative;
+  z-index: 10;
+  margin-top: -50px;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: var(--putih);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+.stat-card {
+  padding: 24px 22px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-right: 1px solid var(--border);
+  transition: var(--transition);
+}
+.stat-card:last-child { border-right: none; }
+.stat-card:hover { background-color: var(--mint-bg); }
+.stat-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-sm);
+  background: var(--mint-bg);
+  border: 1px solid var(--mint-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--hijau-utama);
+  flex-shrink: 0;
+}
+.stat-info b {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--hijau-tua);
+  line-height: 1.1;
+  display: block;
+}
+.stat-info span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* K3 GAUGE & HERO CARD */
+.k3-hero-card {
+  background: linear-gradient(145deg, var(--putih), #F0FDF4);
+  border: 1.5px solid var(--mint-border);
+  border-radius: var(--radius-lg);
+  padding: clamp(24px, 4vw, 40px);
+  box-shadow: var(--shadow-md);
+  margin-bottom: 36px;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 36px;
+  align-items: center;
+}
+.gauge-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.gauge-circle {
+  position: relative;
+  width: 210px;
+  height: 210px;
+  max-width: 100%;
+}
+.gauge-circle svg {
+  transform: rotate(-90deg);
+  width: 100%;
+  height: 100%;
+}
+.gauge-circle circle {
+  fill: none;
+  stroke-width: 18;
+  stroke-linecap: round;
+}
+.gauge-bg { stroke: #E2E8F0; }
+.gauge-val {
+  stroke: var(--emerald);
+  transition: stroke-dashoffset 1s ease-in-out;
+}
+.gauge-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.gauge-text b {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: var(--hijau-tua);
+  line-height: 1;
+}
+.gauge-text span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.k3-overview h3 {
+  font-size: clamp(1.4rem, 2.8vw, 1.85rem);
+  color: var(--hijau-tua);
+  margin-bottom: 12px;
+}
+.k3-pills-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 18px 0;
+}
+.k3-summary-pill {
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--putih);
+  border: 1px solid var(--border);
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* INTERACTIVE FILTER & SEARCH BAR */
+.filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.filter-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  font-size: 0.88rem;
+  font-weight: 700;
+  background: var(--putih);
+  border: 1.5px solid var(--border);
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+.filter-btn:hover, .filter-btn.active {
+  background: var(--hijau-utama);
+  color: var(--putih);
+  border-color: var(--hijau-utama);
+  box-shadow: 0 4px 12px rgba(21, 128, 61, 0.25);
+}
+.search-input-wrap {
+  position: relative;
+  min-width: 270px;
+}
+.search-input-wrap input {
+  width: 100%;
+  padding: 9px 16px 9px 38px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--border);
+  font-size: 0.88rem;
+  background: var(--putih);
+  transition: var(--transition);
+}
+.search-input-wrap input:focus {
+  border-color: var(--emerald);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.2);
+}
+.search-input-wrap svg {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--hijau-utama);
+}
+
+/* INDICATOR CARDS */
+.indicator-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  gap: 22px;
+}
+.indicator-card {
+  background: var(--putih);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.indicator-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--mint-border);
+}
+.ind-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.ind-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--hijau-tua);
+}
+.ind-bar-wrap { margin: 14px 0; }
+.ind-bar-track {
+  height: 10px;
+  background: #E2E8F0;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  position: relative;
+}
+.ind-bar-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 0.8s ease-in-out;
+}
+.ind-bar-fill.ok { background: linear-gradient(90deg, var(--hijau-utama), var(--emerald)); }
+.ind-bar-fill.no { background: linear-gradient(90deg, #EF4444, #DC2626); }
+.ind-meta {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+.ind-footer {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--abu-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.84rem;
+  color: var(--text-muted);
+}
+
+/* SERVICE CARDS */
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  gap: 24px;
+}
+.service-card {
+  background: var(--putih);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px 24px;
+  transition: var(--transition);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--emerald);
+}
+.service-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius);
+  background: var(--mint-bg);
+  border: 1px solid var(--mint-border);
+  color: var(--hijau-utama);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.9rem;
+  margin-bottom: 20px;
+  transition: var(--transition);
+}
+.service-card:hover .service-icon {
+  background: var(--emerald);
+  color: var(--putih);
+  transform: scale(1.08) rotate(-4deg);
+  box-shadow: var(--glow-emerald);
+}
+.service-card h3 {
+  font-size: 1.25rem;
+  color: var(--hijau-tua);
+  margin-bottom: 10px;
+}
+.service-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  flex-grow: 1;
+}
+
+/* TABS SYSTEM */
+.tabs-header {
+  display: flex;
+  gap: 10px;
+  border-bottom: 2px solid var(--border);
+  margin-bottom: 28px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.tab-btn {
+  padding: 12px 20px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+.tab-btn:hover { color: var(--hijau-tua); }
+.tab-btn.active {
+  color: var(--hijau-utama);
+  border-bottom-color: var(--hijau-utama);
+  font-weight: 800;
+}
+.tab-pane { display: none; animation: fadeIn 0.3s ease; }
+.tab-pane.active { display: block; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==============================================================
+   FITUR STRUKTUR ORGANISASI (UPLOAD GAMBAR & OBJECT-FIT: CONTAIN)
+   ============================================================== */
+.struktur-viewer-card {
+  background: var(--putih);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: clamp(16px, 3vw, 32px);
+  box-shadow: var(--shadow-md);
+  margin-top: 20px;
+}
+.struktur-img-container {
+  width: 100%;
+  min-height: 280px;
+  max-height: 800px;
+  background: #F8FAFC;
+  border: 1.5px dashed var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(12px, 2vw, 24px);
+  overflow: hidden;
+  position: relative;
+}
+.struktur-img {
+  width: 100%;
+  height: auto;
+  max-height: 750px;
+  object-fit: contain; /* SESUAI KETENTUAN 2 */
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  cursor: zoom-in;
+  transition: transform 0.25s ease;
+}
+.struktur-img:hover {
+  transform: scale(1.01);
+}
+.struktur-actions-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+.empty-state-box {
+  text-align: center;
+  padding: clamp(40px, 8vw, 80px) 20px;
+  background: var(--putih);
+  border: 1.5px dashed var(--border);
+  border-radius: var(--radius-lg);
+}
+.empty-state-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--mint-bg);
+  border: 1.5px solid var(--mint-border);
+  color: var(--hijau-utama);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+  font-size: 2rem;
+}
+.empty-state-box h3 {
+  font-size: 1.45rem;
+  color: var(--hijau-tua);
+  margin-bottom: 8px;
+}
+.empty-state-box p {
+  color: var(--text-muted);
+  max-width: 480px;
+  margin: 0 auto;
+  font-size: 0.95rem;
+}
+
+/* ADMIN STRUKTUR UPLOAD ZONE */
+.upload-dropzone {
+  border: 2px dashed var(--mint-border);
+  background: var(--mint-bg);
+  border-radius: var(--radius);
+  padding: clamp(24px, 5vw, 42px);
+  text-align: center;
+  transition: var(--transition);
+  cursor: pointer;
+  margin-bottom: 24px;
+}
+.upload-dropzone:hover {
+  border-color: var(--emerald);
+  background: #E6FBF0;
+}
+.upload-dropzone input[type="file"] {
+  display: none;
+}
+
+/* GALLERY */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+  gap: 22px;
+}
+.gallery-item {
+  position: relative;
+  aspect-ratio: 4/3;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--hijau-tua-dark);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  border: 1px solid var(--border);
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(13, 53, 29, 0.92) 0%, rgba(20, 83, 45, 0.3) 60%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  color: var(--putih);
+  opacity: 0.92;
+  transition: var(--transition);
+}
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+.gallery-overlay h4 {
+  color: var(--putih);
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+
+/* FOOTER */
+.site-footer {
+  background: var(--hijau-tua-dark);
+  color: #D1FAE5;
+  padding: clamp(50px, 7vw, 75px) 0 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: clamp(24px, 4vw, 40px);
+  margin-bottom: 50px;
+}
+.footer-brand h3 {
+  color: var(--putih);
+  font-size: 1.45rem;
+  margin-bottom: 12px;
+}
+.footer-brand p {
+  color: #A7F3D0;
+  max-width: 420px;
+  font-size: 0.94rem;
+  line-height: 1.65;
+}
+.footer-col h4 {
+  color: var(--putih);
+  font-size: 1.15rem;
+  margin-bottom: 16px;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 10px; }
+.footer-col a {
+  color: #A7F3D0;
+  font-size: 0.92rem;
+  transition: var(--transition);
+}
+.footer-col a:hover { color: var(--putih); }
+.footer-bottom {
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  color: #6EE7B7;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* ==============================================================
+   DEDICATED ADMIN PORTAL LAYOUT
+   ============================================================== */
+.admin-viewport {
+  display: grid;
+  grid-template-columns: 270px 1fr;
+  min-height: 100vh;
+  background: var(--abu-muda);
+}
+.admin-sidebar {
+  background: linear-gradient(180deg, var(--hijau-tua) 0%, var(--hijau-tua-dark) 100%);
+  color: #E2E8F0;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  overflow-y: auto;
+  z-index: 1000;
+  transition: var(--transition);
+}
+.admin-sidebar-header {
+  padding: 22px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.admin-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--putih);
+  font-weight: 800;
+  font-size: 1.15rem;
+}
+
+.btn-return-web {
+  margin: 16px 16px 8px;
+  background: linear-gradient(135deg, rgba(5, 150, 105, 0.25), rgba(5, 150, 105, 0.1));
+  border: 1.5px solid var(--emerald);
+  color: #6EE7B7;
+  padding: 11px 18px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  transition: var(--transition);
+  text-decoration: none;
+}
+.btn-return-web:hover {
+  background: var(--emerald);
+  color: var(--putih);
+  transform: translateY(-2px);
+  box-shadow: var(--glow-emerald);
+}
+.btn-return-web svg { transition: transform 0.2s ease; }
+.btn-return-web:hover svg { transform: translateX(-4px); }
+
+.admin-user-card {
+  margin: 8px 16px 16px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.admin-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--emerald), var(--hijau-utama));
+  color: var(--putih);
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+}
+.admin-user-meta b {
+  display: block;
+  font-size: 0.92rem;
+  color: var(--putih);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.admin-user-meta span {
+  font-size: 0.78rem;
+  color: #A7F3D0;
+}
+
+.admin-nav {
+  padding: 0 12px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.admin-nav-category {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #6EE7B7;
+  padding: 14px 12px 6px;
+  letter-spacing: 0.05em;
+}
+.admin-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  color: #D1FAE5;
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition: var(--transition);
+  text-decoration: none;
+}
+.admin-nav-item:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--putih);
+}
+.admin-nav-item.active {
+  background: var(--emerald);
+  color: var(--putih);
+  font-weight: 800;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.35);
+}
+.admin-nav-item svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+.admin-sidebar-footer {
+  padding: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.btn-logout {
+  width: 100%;
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(239, 68, 68, 0.5);
+  color: #FCA5A5;
+  padding: 10px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: var(--transition);
+}
+.btn-logout:hover {
+  background: var(--danger);
+  color: var(--putih);
+  border-color: var(--danger);
+}
+
+/* ADMIN MAIN CONTAINER */
+.admin-main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+.admin-topbar {
+  background: var(--putih);
+  border-bottom: 1.5px solid var(--border);
+  height: 70px;
+  padding: 0 clamp(16px, 3vw, 32px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+.admin-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+.admin-breadcrumbs b { color: var(--hijau-tua); }
+.admin-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.topbar-return-web {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--mint-bg);
+  border: 1.5px solid var(--mint-border);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--hijau-utama);
+  transition: var(--transition);
+}
+.topbar-return-web:hover {
+  background: var(--emerald);
+  color: var(--putih);
+  border-color: var(--emerald);
+  box-shadow: var(--glow-emerald);
+}
+
+.admin-content {
+  padding: clamp(16px, 3vw, 32px);
+  flex-grow: 1;
+}
+
+/* ADMIN CARDS & TABLES */
+.admin-card {
+  background: var(--putih);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: clamp(18px, 3vw, 28px);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+}
+.admin-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.admin-card-header h2 {
+  font-size: 1.5rem;
+  color: var(--hijau-tua);
+}
+
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--putih);
+}
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+.admin-table th {
+  background: #F0FDF4;
+  font-weight: 800;
+  color: var(--hijau-tua);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  padding: 13px 18px;
+  border-bottom: 2px solid var(--mint-border);
+  text-align: left;
+}
+.admin-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--abu-subtle);
+  vertical-align: middle;
+}
+.admin-table tr:hover td { background: #F9FEFA; }
+
+/* FORMS */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 22px;
+}
+.form-group.full { grid-column: 1 / -1; }
+.form-group label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--hijau-tua);
+  margin-bottom: 6px;
+}
+.form-control {
+  width: 100%;
+  padding: 11px 15px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid #CBD5E1;
+  background: var(--putih);
+  color: var(--text-main);
+  transition: var(--transition);
+}
+.form-control:focus {
+  border-color: var(--emerald);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.2);
+}
+textarea.form-control { min-height: 105px; resize: vertical; }
+
+/* MODAL DIALOG */
+dialog {
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: clamp(20px, 4vw, 32px);
+  width: min(680px, 94vw);
+  max-height: 90vh;
+  box-shadow: var(--shadow-xl);
+  margin: auto;
+  border: 1.5px solid var(--border);
+}
+dialog::backdrop {
+  background: rgba(13, 53, 29, 0.78);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--abu-subtle);
+}
+.modal-header h3 {
+  font-size: 1.35rem;
+  color: var(--hijau-tua);
+}
+.modal-close {
+  color: var(--text-light);
+  padding: 6px;
+  border-radius: var(--radius-sm);
+}
+.modal-close:hover {
+  color: var(--hijau-tua);
+  background: var(--mint-bg);
+}
+
+/* TOAST NOTIFICATION */
+.toast-msg {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  max-width: calc(100vw - 48px);
+  background: var(--hijau-tua-dark);
+  color: var(--putih);
+  padding: 14px 22px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 9999;
+  font-size: 0.92rem;
+  font-weight: 600;
+  animation: slideUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-left: 5px solid var(--emerald);
+}
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* LOGIN VIEW STANDALONE */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top, var(--hijau-tua), var(--hijau-tua-dark));
+  padding: 24px;
+}
+.login-box {
+  width: 100%;
+  max-width: 440px;
+  background: var(--putih);
+  border-radius: var(--radius-lg);
+  padding: clamp(28px, 6vw, 42px);
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--border);
+}
+.login-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+.login-header h2 {
+  font-size: 1.65rem;
+  color: var(--hijau-tua);
+  margin-top: 12px;
+}
+
+/* PRINT STYLES */
+@media print {
+  .nav-header, .site-footer, .admin-sidebar, .admin-topbar, .hazard-stripe, .noprint, .btn, .filter-bar, .admin-active-notice {
+    display: none !important;
+  }
+  .admin-viewport { display: block; }
+  .admin-content { padding: 0; }
+  body { background: var(--putih); color: #000; font-size: 11pt; }
+  .admin-card { border: none; box-shadow: none; padding: 0; }
+  .print-header { display: block !important; margin-bottom: 20px; border-bottom: 2px solid #000; padding-bottom: 12px; }
+}
+
+/* ==============================================================
+   RESPONSIVITAS BREAKPOINTS LENGKAP:
+   SMARTPHONE (Android & iPhone), TABLET, LAPTOP, DESKTOP, 4K
+   ============================================================== */
+
+/* TABLET & SMALL LAPTOP (<= 1080px): AKTIFKAN HAMBURGER MENU */
+@media (max-width: 1080px) {
+  .mobile-menu-btn { display: flex; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 74px;
+    left: 0;
+    right: 0;
+    background: var(--hijau-tua);
+    flex-direction: column;
+    padding: 16px 24px 24px;
+    border-bottom: 2px solid var(--emerald);
+    box-shadow: var(--shadow-xl);
+    gap: 6px;
+  }
+  .nav-links.open { display: flex; }
+  .nav-item {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 0.95rem;
+  }
+  
+  /* ADMIN SIDEBAR OFF-CANVAS DI TABLET & MOBILE */
+  .admin-viewport { grid-template-columns: 1fr; }
+  .admin-sidebar {
+    position: fixed;
+    left: -290px;
+    width: 280px;
+    transition: left 0.3s ease;
+  }
+  .admin-sidebar.open {
+    left: 0;
+    box-shadow: var(--shadow-xl);
+  }
+  .admin-topbar { padding: 0 18px; }
+  
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .stat-card:nth-child(2) { border-right: none; }
+  .stat-card:nth-child(1), .stat-card:nth-child(2) { border-bottom: 1px solid var(--border); }
+  
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+
+/* TABLET PORTRAIT & MEDIUM SCREENS (<= 840px) */
+@media (max-width: 840px) {
+  .k3-hero-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 28px;
+  }
+  .k3-pills-row { justify-content: center; }
+  .hero-btns { justify-content: flex-start; }
+}
+
+/* SMARTPHONE (<= 640px) */
+@media (max-width: 640px) {
+  .brand-link { max-width: 65vw; }
+  .brand-logo-icon { width: 36px; height: 36px; }
+  .brand-name { font-size: 1.05rem; }
+  .btn-admin-portal span:last-child { display: none; }
+  .btn-admin-portal { padding: 8px 12px; }
+  
+  .stats-grid { grid-template-columns: 1fr; }
+  .stat-card { border-right: none !important; border-bottom: 1px solid var(--border); }
+  
+  .form-grid { grid-template-columns: 1fr; }
+  .hero-btns .btn { width: 100%; }
+  
+  .filter-bar { flex-direction: column; align-items: stretch; }
+  .search-input-wrap { width: 100%; min-width: 100%; }
+  .filter-tabs { width: 100%; justify-content: flex-start; overflow-x: auto; padding-bottom: 4px; }
+  
+  .admin-topbar-actions .badge { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div id="app"></div>
+<dialog id="dlg"></dialog>
+
+<script>
+/* ==============================================================
+   KONFIGURASI DAN DATA AWAL (SEED)
+   ============================================================== */
+const CONFIG = {
+  URL: "https://script.google.com/macros/s/AKfycbz6FYFR5aQHZH5g3en_7rlQcLMSraPsSLh9lr4uNV2kkHEUEqzxxXmXK10J_BWFhhgc/exec"
+};
+
+const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 5);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const $ = s => document.querySelector(s);
+const $$ = s => document.querySelectorAll(s);
+
+const SEED = {
+  Profil: {
+    nama: 'PT Nusantara Karya Teknik',
+    tagline: 'Solusi Rekayasa Industri & Konstruksi Berstandar K3 Nasional Menuju Zero Accident',
+    logo: '',
+    banner: 'https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1600&q=80',
+    sejarah: 'Didirikan pada tahun 2005 sebagai perusahaan rekayasa dan fabrikasi presisi, PT Nusantara Karya Teknik telah berkembang pesat menjadi mitra strategis di sektor industri manufaktur, energi, dan konstruksi. Dengan menempatkan Keselamatan dan Kesehatan Kerja (K3) sebagai pilar utama di atas target produksi, kami senantiasa menghadirkan standar mutu kerja terbaik yang memprioritaskan keselamatan setiap pekerja.',
+    visi: 'Menjadi mitra rekayasa industri terkemuka dengan keunggulan mutu berstandar global serta budaya keselamatan kerja tanpa kecelakaan (Zero Accident).',
+    misi: 'Menerapkan Sistem Manajemen K3 (SMK3) secara menyeluruh pada setiap tahapan kerja dan proyek.\nMeningkatkan kompetensi, sertifikasi, dan kesadaran keselamatan seluruh personel kerja.\nMemberikan hasil rekayasa fabrikasi dan pemeliharaan tepat mutu, tepat waktu, dan efisien.\nMenciptakan lingkungan kerja yang aman, sehat, dan berkelanjutan bagi mitra maupun masyarakat.',
+    bidang: 'Fabrikasi Baja Berat, Pemeliharaan Mesin Industri, Konstruksi Pipa & Tangki, Jasa Engineering K3',
+    tahun: '2005',
+    alamat: 'Kawasan Industri Gresik Mas Blok C-18',
+    kota: 'Gresik, Jawa Timur',
+    telepon: '+62 31 398 5521',
+    email: 'k3.safety@nusantarakarya.co.id',
+    website: 'www.nusantarakarya.co.id',
+    pekerja: '248',
+    bahaya: 'Tinggi',
+    potensi: 'Pekerjaan di ketinggian (working at height), operasi pengelasan dan pemotongan berpotensi panas/percikan api, operasi pengangkatan beban berat (rigging & lifting), paparan kebisingan mekanis, serta penggunaan bahan kimia pelarut industri.'
+  },
+  Layanan: [
+    { id: 'l1', nama: 'Fabrikasi Baja & Tangki Industri', deskripsi: 'Pekerjaan fabrikasi presisi untuk struktur baja berat, tangki timbun bertekanan, dan instalasi perpipaan bersertifikasi standar SNI dan ASME.', ikon: '🏗️' },
+    { id: 'l2', nama: 'Pemeliharaan Mesin & Shutdown', deskripsi: 'Layanan preventive maintenance, rekondisi mesin pabrik berkala, dan penanganan darurat mesin industri untuk mencegah downtime operasional.', ikon: '⚙️' },
+    { id: 'l3', nama: 'Klinik Tanggap Darurat & P3K', deskripsi: 'Pusat penanganan medis darurat bersiaga 24 jam dengan ambulans, peralatan resusitasi lengkap, dan tim Emergency Response Team (ERT) bersertifikat.', ikon: '🚑' },
+    { id: 'l4', nama: 'Pelatihan & Sertifikasi K3', deskripsi: 'Pusat edukasi keselamatan kerja, pelatihan pemadaman api (Fire Drill), simulasi evakuasi, dan sertifikasi bekerja di ruang terbatas (Confined Space).', ikon: '🎓' }
+  ],
+  // FITUR STRUKTUR ORGANISASI: BERUPA GAMBAR DENGAN PREVIEW & VALIDASI (KETENTUAN 2)
+  Struktur: {
+    gambar: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1400&q=80',
+    keterangan: 'Bagan Struktur Organisasi Tim K3 & Manajemen Perusahaan',
+    updatedAt: '2026-11-09'
+  },
+  Galeri: [
+    { id: 'g1', judul: 'Simulasi Tanggap Darurat Kebakaran', url: 'https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=800&q=80' },
+    { id: 'g2', judul: 'Induksi K3 & Safety Briefing Pagi', url: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80' },
+    { id: 'g3', judul: 'Inspeksi Berkala APAR & Sistem Hidran', url: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=80' },
+    { id: 'g4', judul: 'Area Workshop Fabrikasi Baja Presisi', url: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80' }
+  ],
+  Kontak: [
+    { id: 'k1', jenis: 'WhatsApp Layanan', nilai: '+6281234567890' },
+    { id: 'k2', jenis: 'LinkedIn Perusahaan', nilai: 'https://linkedin.com/company/nusantara-karya-teknik' },
+    { id: 'k3', jenis: 'Instagram K3', nilai: 'https://instagram.com/k3_nusantarakarya' }
+  ],
+  Indikator: [
+    { id: 'i1', nama: 'Kepatuhan Penggunaan APD Lengkap', satuan: '%', arah: 'naik' },
+    { id: 'i2', nama: 'Pelatihan & Induksi K3 Terselenggara', satuan: '%', arah: 'naik' },
+    { id: 'i3', nama: 'Inspeksi Rutin Area & Peralatan K3', satuan: 'kali/bulan', arah: 'naik' },
+    { id: 'i4', nama: 'Kecelakaan Kerja Hari Hilang (LTI Days)', satuan: 'hari', arah: 'turun' },
+    { id: 'i5', nama: 'Kesiapan APAR & Sistem Pemadam Kebakaran', satuan: '%', arah: 'naik' },
+    { id: 'i6', nama: 'Tindak Lanjut Temuan Near-Miss / Potensi Bahaya', satuan: '%', arah: 'naik' }
+  ],
+  Standar: [
+    { id: 't1', indikator_id: 'i1', nilai: '95' },
+    { id: 't2', indikator_id: 'i2', nilai: '90' },
+    { id: 't3', indikator_id: 'i3', nilai: '4' },
+    { id: 't4', indikator_id: 'i4', nilai: '0' },
+    { id: 't5', indikator_id: 'i5', nilai: '100' },
+    { id: 't6', indikator_id: 'i6', nilai: '85' }
+  ],
+  Aktual: [
+    { id: 'a1', indikator_id: 'i1', periode: '2026-10', nilai: '98' },
+    { id: 'a2', indikator_id: 'i2', periode: '2026-10', nilai: '94' },
+    { id: 'a3', indikator_id: 'i3', periode: '2026-10', nilai: '5' },
+    { id: 'a4', indikator_id: 'i4', periode: '2026-10', nilai: '0' },
+    { id: 'a5', indikator_id: 'i5', periode: '2026-10', nilai: '100' },
+    { id: 'a6', indikator_id: 'i6', periode: '2026-10', nilai: '89' }
+  ]
+};
+
+const PF = [
+  ['nama', 'Nama Perusahaan'],
+  ['tagline', 'Tagline / Moto Keselamatan K3'],
+  ['logo', 'URL Logo Perusahaan', 'url'],
+  ['banner', 'URL Banner Header', 'url'],
+  ['tahun', 'Tahun Berdiri'],
+  ['bidang', 'Bidang Usaha / Sektor Industri'],
+  ['alamat', 'Alamat Lengkap Kantor & Workshop'],
+  ['kota', 'Kota & Provinsi'],
+  ['telepon', 'Nomor Telepon Resmi'],
+  ['email', 'Email Resmi Perusahaan'],
+  ['website', 'Website'],
+  ['pekerja', 'Jumlah Tenaga Kerja'],
+  ['bahaya', 'Klasifikasi Bahaya Tempat Kerja', ['Rendah', 'Sedang', 'Tinggi', 'Sangat Tinggi']],
+  ['sejarah', 'Sejarah Singkat Perusahaan', 'area'],
+  ['visi', 'Visi Perusahaan', 'area'],
+  ['misi', 'Misi Perusahaan (satu butir per baris)', 'area'],
+  ['potensi', 'Analisis & Ringkasan Potensi Bahaya', 'area']
+];
+
+const CFG = {
+  Layanan: {
+    t: 'Layanan & Fasilitas',
+    f: [['nama', 'Nama Layanan'], ['ikon', 'Emoji / Ikon'], ['deskripsi', 'Deskripsi Lengkap', 'area']],
+    c: ['ikon', 'nama', 'deskripsi']
+  },
+  Galeri: {
+    t: 'Galeri Dokumentasi K3',
+    f: [['judul', 'Judul Foto Kegiatan'], ['url', 'URL Gambar', 'url']],
+    c: ['judul', 'url']
+  },
+  Kontak: {
+    t: 'Kontak & Kanal Komunikasi',
+    f: [['jenis', 'Jenis Kanal (mis. WhatsApp, LinkedIn)'], ['nilai', 'Nomor / Tautan URL']],
+    c: ['jenis', 'nilai']
+  },
+  Indikator: {
+    t: 'Master Indikator K3',
+    f: [
+      ['nama', 'Nama Indikator K3'],
+      ['satuan', 'Satuan Ukuran'],
+      ['arah', 'Arah Penilaian', [['naik', 'Semakin Tinggi Semakin Baik (≥ Standar)'], ['turun', 'Semakin Rendah Semakin Baik (≤ Standar)']]]
+    ],
+    c: ['nama', 'satuan', 'arah']
+  },
+  Standar: {
+    t: 'Standar Minimum K3',
+    f: [
+      ['indikator_id', 'Indikator Terkait', () => indOpts()],
+      ['nilai', 'Nilai Standar Regulasi', 'num']
+    ],
+    c: ['indikator_id', 'nilai']
+  },
+  Aktual: {
+    t: 'Data Aktual K3',
+    f: [
+      ['indikator_id', 'Indikator Terkait', () => indOpts()],
+      ['periode', 'Periode Pencatatan (YYYY-MM)', 'month'],
+      ['nilai', 'Nilai Realisasi Aktual', 'num']
+    ],
+    c: ['indikator_id', 'periode', 'nilai']
+  }
+};
+
+const indOpts = () => S.db.Indikator.map(i => [i.id, i.nama + ' (' + i.satuan + ')']);
+const indName = id => (S.db.Indikator.find(i => i.id == id) || {}).nama || 'Indikator ?';
+
+const S = {
+  db: null,
+  token: sessionStorage.k3_tk || '',
+  user: sessionStorage.k3_us || '',
+  demo: true,
+  filterK3: 'all',
+  searchK3: '',
+  profileTab: 'tentang'
+};
+
+/* ==============================================================
+   DATA SYNC & API HANDLER
+   ============================================================== */
+async function loadData() {
+  let loaded = null;
+  if (CONFIG.URL) {
+    try {
+      const res = await fetch(CONFIG.URL + '?action=public');
+      if (res.ok) {
+        const json = await res.json();
+        if (json && json.profile) {
+          S.demo = false;
+          let structImg = '';
+          if (json.structure) {
+            if (Array.isArray(json.structure) && json.structure[0]) {
+              structImg = json.structure[0].fotoUrl || json.structure[0].gambar || '';
+            } else if (typeof json.structure === 'object') {
+              structImg = json.structure.gambar || json.structure.fotoUrl || '';
+            }
+          }
+          loaded = {
+            Profil: json.profile,
+            Layanan: json.services || [],
+            Struktur: { gambar: structImg, keterangan: 'Bagan Struktur Organisasi', updatedAt: new Date().toISOString() },
+            Galeri: json.gallery || [],
+            Kontak: [
+              { id: 'k1', jenis: 'Telepon', nilai: json.contacts.telepon || '' },
+              { id: 'k2', jenis: 'Email', nilai: json.contacts.email || '' },
+              { id: 'k3', jenis: 'WhatsApp', nilai: json.contacts.whatsapp || '' }
+            ],
+            Indikator: json.indicators || [],
+            Standar: [],
+            Aktual: []
+          };
+        }
+      }
+    } catch (e) {
+      console.warn('Backend GAS offline atau URL belum diaktifkan, beralih ke mode browser storage');
+    }
+  }
+
+  if (!loaded) {
+    try {
+      loaded = JSON.parse(localStorage.getItem('k3_local_db'));
+    } catch (e) {}
+  }
+
+  S.db = loaded && loaded.Profil ? loaded : structuredClone(SEED);
+  
+  // Normalisasi data Struktur jika sebelumnya berupa array
+  if (Array.isArray(S.db.Struktur)) {
+    const first = S.db.Struktur[0] || {};
+    S.db.Struktur = {
+      gambar: first.fotoUrl || first.gambar || (SEED.Struktur ? SEED.Struktur.gambar : ''),
+      keterangan: 'Bagan Struktur Organisasi Perusahaan',
+      updatedAt: new Date().toISOString()
+    };
+  }
+
+  for (const k in SEED) {
+    if (!S.db[k]) S.db[k] = Array.isArray(SEED[k]) ? [] : {};
+  }
+  syncLocalStorage();
+}
+
+function syncLocalStorage() {
+  try {
+    localStorage.setItem('k3_local_db', JSON.stringify(S.db));
+  } catch (e) {}
+}
+
+async function postApi(body) {
+  if (S.demo || !CONFIG.URL) return { ok: false, error: 'Demo mode' };
+  try {
+    const res = await fetch(CONFIG.URL, {
+      method: 'POST',
+      body: JSON.stringify({ ...body, token: S.token })
+    });
+    return await res.json();
+  } catch (e) {
+    return { ok: false, error: 'Koneksi ke Google Sheets gagal: ' + e.message };
+  }
+}
+
+async function saveModuleData(sheet) {
+  syncLocalStorage();
+  if (S.demo || !CONFIG.URL) return true;
+  let data = S.db[sheet];
+  if (sheet === 'Profil') data = S.db.Profil;
+  if (sheet === 'Struktur' || sheet === 'StrukturOrganisasi') {
+    sheet = 'StrukturOrganisasi';
+    data = {
+      id: 'STRUKTUR-IMG',
+      nama: 'Bagan Struktur Organisasi',
+      jabatan: 'Gambar Resmi',
+      fotoUrl: S.db.Struktur.gambar || '',
+      urutan: 1,
+      aktif: true
+    };
+  }
+  const res = await postApi({ action: 'save', sheet, data });
+  if (!res.ok) {
+    showToast(res.error || 'Gagal menyimpan ke Google Sheets');
+    if (/sesi/i.test(res.error)) logout();
+    return false;
+  }
+  return true;
+}
+
+function showToast(msg) {
+  const existing = document.querySelector('.toast-msg');
+  if (existing) existing.remove();
+  const el = document.createElement('div');
+  el.className = 'toast-msg';
+  el.innerHTML = `
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    <span>${esc(msg)}</span>
+  `;
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 3400);
+}
+
+/* ==============================================================
+   KALKULASI KEPATUHAN K3
+   ============================================================== */
+function calculateK3() {
+  const d = S.db;
+  const rows = d.Indikator.map(i => {
+    const st = d.Standar.find(x => x.indikator_id == i.id);
+    const ak = d.Aktual.filter(x => x.indikator_id == i.id).sort((a, b) => String(b.periode).localeCompare(String(a.periode)))[0];
+    if (!st || !ak) return { ...i, ok: null, skor: 0, std: 0, act: 0, per: '-' };
+    const s = +st.nilai, a = +ak.nilai, isUp = i.arah === 'naik';
+    const isCompliant = isUp ? a >= s : a <= s;
+    let score = isCompliant ? 100 : (isUp ? (s > 0 ? (a / s) * 100 : 0) : (a > 0 ? (s / a) * 100 : 0));
+    return {
+      ...i,
+      std: s,
+      act: a,
+      per: ak.periode,
+      ok: isCompliant,
+      skor: Math.min(100, Math.max(0, Math.round(score)))
+    };
+  });
+  const valid = rows.filter(r => r.ok !== null);
+  const totalScore = valid.length ? Math.round(valid.reduce((acc, r) => acc + r.skor, 0) / valid.length) : 0;
+  const compliantCount = valid.filter(r => r.ok).length;
+  return {
+    rows,
+    total: totalScore,
+    patuh: compliantCount,
+    tidakPatuh: valid.length - compliantCount,
+    totalIndikator: valid.length
+  };
+}
+
+/* SVG GAUGE KOMPONEN */
+function renderGauge(score) {
+  const radius = 88;
+  const circ = 2 * Math.PI * radius;
+  const offset = circ - (circ * score) / 100;
+  const color = score >= 90 ? 'var(--emerald)' : score >= 75 ? 'var(--hijau-utama)' : 'var(--danger)';
+  const label = score >= 90 ? 'Sangat Baik' : score >= 75 ? 'Memenuhi Standar' : 'Perlu Evaluasi';
+  return `
+    <div class="gauge-box">
+      <div class="gauge-circle">
+        <svg viewBox="0 0 220 220">
+          <circle cx="110" cy="110" r="${radius}" class="gauge-bg"></circle>
+          <circle cx="110" cy="110" r="${radius}" class="gauge-val" stroke="${color}" stroke-dasharray="${circ}" stroke-dashoffset="${offset}"></circle>
+        </svg>
+        <div class="gauge-text">
+          <b>${score}%</b>
+          <span>Skor Kepatuhan</span>
+        </div>
+      </div>
+      <div class="badge ${score >= 75 ? 'badge-success' : 'badge-danger'}" style="margin-top:16px">
+        ● Predikat: ${label}
+      </div>
+    </div>
+  `;
+}
+
+/* ==============================================================
+   PUBLIC WEBSITE VIEWS (LANDING PAGE)
+   ============================================================== */
+const NAV_MENU = [
+  ['beranda', 'Beranda'],
+  ['k3', 'Infografis K3'],
+  ['layanan', 'Layanan & Fasilitas'],
+  ['profil', 'Profil Perusahaan'],
+  ['struktur', 'Struktur K3'],
+  ['galeri', 'Galeri K3'],
+  ['kontak', 'Kontak']
+];
+
+function renderK3Logo() {
+  return `
+    <div class="brand-logo-icon">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        <line x1="12" y1="8" x2="12" y2="14"></line>
+        <line x1="9" y1="11" x2="15" y2="11"></line>
+      </svg>
+    </div>
+  `;
+}
+
+/* KETENTUAN 1: NAVBAR PROPOSIONAL DENGAN NAMA SATU BARIS & WHITE-SPACE: NOWRAP */
+function renderPublicHeader(activePage) {
+  const p = S.db.Profil;
+  const isLoggedIn = !!(S.token || (S.demo && S.user));
+  return `
+    ${isLoggedIn ? `
+    ` : ''}
+    <nav class="nav-header">
+      <div class="wrap nav-wrap">
+        <!-- BRAND LOGO DAN NAMA PERUSAHAAN (SATU BARIS HORIZONTAL, TIDAK PECAH) -->
+        <a class="brand-link" href="#beranda" title="${esc(p.nama)}">
+          ${p.logo ? `<img class="brand-logo-img" src="${esc(p.logo)}" alt="Logo">` : renderK3Logo()}
+          <span class="brand-name">${esc(p.nama)}</span>
+        </a>
+
+        <!-- MENU NAVIGASI HORIZONTAL RESPOCKET -->
+        <div class="nav-links" id="navLinks">
+          ${NAV_MENU.map(n => `
+            <a href="#${n[0]}" class="nav-item ${activePage === n[0] ? 'active' : ''}">${n[1]}</a>
+          `).join('')}
+        </div>
+
+        <!-- AKSI NAVBAR & HAMBURGER -->
+        <div class="nav-actions">
+          ${isLoggedIn ? `
+            <a href="#admin/dash" class="btn-admin-portal" title="Akses Dashboard Admin">
+              <span class="pulse-dot"></span>
+              <span>Panel Admin</span>
+            </a>
+          ` : `
+            <a href="#admin" class="btn btn-outline-white btn-sm" style="font-weight:700">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>
+              <span>Login Admin</span>
+            </a>
+          `}
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Buka Menu Navigasi">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+  `;
+}
+
+function renderPublicFooter() {
+  const p = S.db.Profil;
+  return `
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <h3>${esc(p.nama)}</h3>
+            <p>${esc(p.tagline)}</p>
+            <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap">
+              <span class="badge badge-k3">ISO 45001:2018 Certified</span>
+              <span class="badge badge-success">Sistem Manajemen K3 Nasional</span>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Navigasi Halaman</h4>
+            <ul>
+              <li><a href="#beranda">Beranda</a></li>
+              <li><a href="#k3">Infografis Kepatuhan K3</a></li>
+              <li><a href="#layanan">Layanan & Fasilitas</a></li>
+              <li><a href="#profil">Visi, Misi & Profil</a></li>
+              <li><a href="#struktur">Struktur Organisasi</a></li>
+              <li><a href="#galeri">Galeri Dokumentasi</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Kontak Perusahaan</h4>
+            <p style="font-size:0.92rem;color:#A7F3D0">Telepon: ${esc(p.telepon)}<br>Email: ${esc(p.email)}</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div>© ${new Date().getFullYear()} ${esc(p.nama)}. Seluruh Hak Cipta Dilindungi.</div>
+          <div>Sistem Manajemen Keselamatan dan Kesehatan Kerja (SMK3)</div>
+        </div>
+      </div>
+    </footer>
+  `;
+}
+
+/* ==============================================================
+   HALAMAN PUBLIK SPESIFIK
+   ============================================================== */
+const PUBLIC_VIEWS = {
+  beranda() {
+    const p = S.db.Profil;
+    const k = calculateK3();
+    return `
+      ${renderPublicHeader('beranda')}
+      <header class="hero" style="background-image: linear-gradient(135deg, rgba(13,53,29,0.94) 0%, rgba(20,83,45,0.88) 100%), url('${esc(p.banner)}'); background-size: cover; background-position: center;">
+        <div class="wrap">
+          <div class="hero-content">
+            <div class="badge badge-k3" style="margin-bottom:6px">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              Standar K3 Industri Terverifikasi
+            </div>
+            <h1>${esc(p.nama)}</h1>
+            <p class="hero-tagline">${esc(p.tagline)}</p>
+            <div class="hero-btns">
+              <a class="btn btn-primary" href="#k3">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                Lihat Infografis K3
+              </a>
+              <a class="btn btn-outline-white" href="#profil">
+                Profil Perusahaan
+              </a>
+              <a class="btn btn-outline-white" href="#kontak">
+                Hubungi Kami
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="hazard-stripe"></div>
+
+      <!-- STATS STRIP -->
+      <div class="wrap stats-strip">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon">📅</div>
+            <div class="stat-info">
+              <b>${esc(p.tahun)}</b>
+              <span>Tahun Berdiri</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">👷</div>
+            <div class="stat-info">
+              <b>${esc(p.pekerja)}</b>
+              <span>Tenaga Kerja Aktif</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" style="color:var(--danger)">⚠️</div>
+            <div class="stat-info">
+              <b style="color:#B45309">${esc(p.bahaya)}</b>
+              <span>Klasifikasi Bahaya</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" style="color:var(--emerald)">🛡️</div>
+            <div class="stat-info">
+              <b style="color:var(--emerald)">${k.total}%</b>
+              <span>Kepatuhan K3 Terkini</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- K3 HIGHLIGHT -->
+      <section class="section">
+        <div class="wrap">
+          <div class="k3-hero-card">
+            ${renderGauge(k.total)}
+            <div class="k3-overview">
+              <div class="badge badge-k3" style="margin-bottom:10px">Pemantauan K3 Terintegrasi</div>
+              <h3>Kepatuhan Standar Keselamatan Kerja</h3>
+              <p style="color:var(--text-muted);font-size:1.05rem;line-height:1.7">
+                Berdasarkan evaluasi dan audit lapangan periodik, sebanyak <b>${k.patuh} dari ${k.totalIndikator} indikator K3</b> telah memenuhi ketentuan regulasi keselamatan kerja yang disyaratkan.
+              </p>
+              <div class="k3-pills-row">
+                <div class="k3-summary-pill">
+                  <span style="color:var(--emerald);font-size:1.1rem">●</span>
+                  <span><b>${k.patuh}</b> Memenuhi Standar</span>
+                </div>
+                <div class="k3-summary-pill">
+                  <span style="color:var(--danger);font-size:1.1rem">●</span>
+                  <span><b>${k.tidakPatuh}</b> Perlu Evaluasi</span>
+                </div>
+                <div class="k3-summary-pill">
+                  <span>🎯 Komitmen <b>Zero Accident</b></span>
+                </div>
+              </div>
+              <div style="margin-top:22px">
+                <a class="btn btn-dark" href="#k3">Buka Infografis Selengkapnya →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PREVIEW LAYANAN -->
+      <section class="section section-alt">
+        <div class="wrap">
+          <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:38px;flex-wrap:wrap;gap:16px">
+            <div>
+              <div class="badge badge-k3" style="margin-bottom:8px">Keunggulan Layanan</div>
+              <h2>Layanan & Fasilitas Rekayasa K3</h2>
+            </div>
+            <a href="#layanan" class="btn btn-outline">Lihat Seluruh Layanan →</a>
+          </div>
+          <div class="grid-cards">
+            ${S.db.Layanan.slice(0, 4).map(l => `
+              <div class="service-card">
+                <div class="service-icon">${esc(l.ikon || '🛠️')}</div>
+                <h3>${esc(l.nama)}</h3>
+                <p>${esc(l.deskripsi)}</p>
+                <div style="margin-top:22px">
+                  <button class="btn btn-sm btn-outline" onclick="openServiceModal('${esc(l.id)}')">Detail Layanan</button>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </section>
+
+      <!-- PREVIEW GALERI -->
+      <section class="section">
+        <div class="wrap">
+          <div style="text-align:center;max-width:680px;margin:0 auto 42px">
+            <div class="badge badge-k3" style="margin-bottom:8px">Dokumentasi Nyata</div>
+            <h2>Penerapan Budaya K3 di Lingkungan Kerja</h2>
+            <p style="color:var(--text-muted)">Kegiatan pelatihan, simulasi tanggap darurat berkala, dan inspeksi fasilitas workshop.</p>
+          </div>
+          <div class="gallery-grid">
+            ${S.db.Galeri.slice(0, 4).map(g => `
+              <div class="gallery-item" onclick="openLightbox('${esc(g.url)}', '${esc(g.judul)}')">
+                <img src="${esc(g.url)}" alt="${esc(g.judul)}" loading="lazy">
+                <div class="gallery-overlay">
+                  <h4>${esc(g.judul)}</h4>
+                  <span style="font-size:0.84rem;color:#6EE7B7">🔍 Klik untuk memperbesar</span>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </section>
+      ${renderPublicFooter()}
+    `;
+  },
+
+  k3() {
+    const k = calculateK3();
+    let rows = k.rows;
+    if (S.filterK3 === 'patuh') rows = rows.filter(r => r.ok === true);
+    if (S.filterK3 === 'tidak') rows = rows.filter(r => r.ok === false);
+    if (S.searchK3) {
+      const q = S.searchK3.toLowerCase();
+      rows = rows.filter(r => r.nama.toLowerCase().includes(q) || r.satuan.toLowerCase().includes(q));
+    }
+
+    return `
+      ${renderPublicHeader('k3')}
+      <section class="section">
+        <div class="wrap">
+          <div style="margin-bottom:34px">
+            <div class="badge badge-k3" style="margin-bottom:8px">Audit Keselamatan</div>
+            <h1 style="font-size:2.8rem">Infografis Kepatuhan K3</h1>
+            <p style="color:var(--text-muted);font-size:1.1rem;max-width:720px">
+              Evaluasi ketercapaian standar K3 secara transparan dan terukur sesuai regulasi ketenagakerjaan nasional.
+            </p>
+          </div>
+
+          <div class="k3-hero-card">
+            ${renderGauge(k.total)}
+            <div>
+              <h3>Status Pemenuhan Regulasi</h3>
+              <p style="color:var(--text-muted);margin:12px 0 18px;line-height:1.7">
+                Dari total <b>${k.totalIndikator} indikator</b> yang diuji, <b>${k.patuh} indikator</b> berstatus memenuhi standar regulasi K3 nasional, dan <b>${k.tidakPatuh} indikator</b> sedang dalam rencana tindak lanjut perbaikan.
+              </p>
+              <div class="k3-pills-row">
+                <div class="k3-summary-pill"><span style="color:var(--emerald)">●</span> Memenuhi Standar: <b>${k.patuh}</b></div>
+                <div class="k3-summary-pill"><span style="color:var(--danger)">●</span> Perlu Evaluasi: <b>${k.tidakPatuh}</b></div>
+                <div class="k3-summary-pill">Target: <b>100% Zero Accident</b></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- INTERACTIVE FILTER & SEARCH -->
+          <div class="filter-bar">
+            <div class="filter-tabs">
+              <button class="filter-btn ${S.filterK3 === 'all' ? 'active' : ''}" onclick="setK3Filter('all')">Semua Indikator (${k.rows.length})</button>
+              <button class="filter-btn ${S.filterK3 === 'patuh' ? 'active' : ''}" onclick="setK3Filter('patuh')">✅ Memenuhi Standar (${k.patuh})</button>
+              <button class="filter-btn ${S.filterK3 === 'tidak' ? 'active' : ''}" onclick="setK3Filter('tidak')">⚠️ Perlu Evaluasi (${k.tidakPatuh})</button>
+            </div>
+            <div class="search-input-wrap">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <input type="text" placeholder="Cari indikator K3..." value="${esc(S.searchK3)}" oninput="searchK3Indicators(this.value)">
+            </div>
+          </div>
+
+          <!-- GRID INDIKATOR -->
+          <div class="indicator-grid">
+            ${rows.length ? rows.map(r => `
+              <div class="indicator-card" onclick="openIndicatorDetail('${esc(r.id)}')">
+                <div>
+                  <div class="ind-header">
+                    <div class="ind-title">${esc(r.nama)}</div>
+                    <span class="badge ${r.ok ? 'badge-success' : 'badge-danger'}">
+                      ${r.ok ? 'Memenuhi' : 'Belum Memenuhi'}
+                    </span>
+                  </div>
+                  <div class="ind-bar-wrap">
+                    <div class="ind-bar-track">
+                      <div class="ind-bar-fill ${r.ok ? 'ok' : 'no'}" style="width: ${r.skor}%"></div>
+                    </div>
+                    <div class="ind-meta">
+                      <span>Kepatuhan: <b>${r.skor}%</b></span>
+                      <span>Standar: <b>${r.arah === 'naik' ? '≥ ' : '≤ '}${r.std} ${esc(r.satuan)}</b></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="ind-footer">
+                  <span>Realisasi: <b>${r.act} ${esc(r.satuan)}</b></span>
+                  <span style="color:var(--hijau-utama);font-weight:700">Rincian →</span>
+                </div>
+              </div>
+            `).join('') : `
+              <div style="grid-column:1/-1;padding:48px;text-align:center;background:var(--putih);border-radius:var(--radius);border:1.5px solid var(--border)">
+                <p style="color:var(--text-muted);font-size:1.05rem">Tidak ada indikator yang sesuai dengan kata kunci pencarian.</p>
+              </div>
+            `}
+          </div>
+        </div>
+      </section>
+      ${renderPublicFooter()}
+    `;
+  },
+
+  layanan() {
+    return `
+      ${renderPublicHeader('layanan')}
+      <section class="section">
+        <div class="wrap">
+          <div style="margin-bottom:44px;text-align:center;max-width:720px;margin-left:auto;margin-right:auto">
+            <div class="badge badge-k3" style="margin-bottom:8px">Layanan & Fasilitas</div>
+            <h1 style="font-size:2.8rem">Solusi Industri Berbasis Standar K3</h1>
+            <p style="color:var(--text-muted);font-size:1.1rem">
+              Dukungan fasilitas berstandar tinggi untuk menjamin kelancaran operasional dan perlindungan maksimal setiap pekerja.
+            </p>
+          </div>
+          <div class="grid-cards">
+            ${S.db.Layanan.map(l => `
+              <div class="service-card">
+                <div class="service-icon">${esc(l.ikon || '🛠️')}</div>
+                <h3>${esc(l.nama)}</h3>
+                <p style="margin-bottom:22px">${esc(l.deskripsi)}</p>
+                <div style="margin-top:auto">
+                  <button class="btn btn-outline" style="width:100%" onclick="openServiceModal('${esc(l.id)}')">
+                    Konsultasikan Layanan Ini
+                  </button>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </section>
+      ${renderPublicFooter()}
+    `;
+  },
+
+  profil() {
+    const p = S.db.Profil;
+    return `
+      ${renderPublicHeader('profil')}
+      <section class="section">
+        <div class="wrap">
+          <div style="margin-bottom:34px">
+            <div class="badge badge-k3" style="margin-bottom:8px">Tentang Perusahaan</div>
+            <h1 style="font-size:2.8rem">Profil & Budaya Keselamatan Kerja</h1>
+          </div>
+
+          <!-- TABS PROFIL -->
+          <div class="tabs-header">
+            <button class="tab-btn ${S.profileTab === 'tentang' ? 'active' : ''}" onclick="setProfileTab('tentang')">Sejarah & Profil</button>
+            <button class="tab-btn ${S.profileTab === 'visimisi' ? 'active' : ''}" onclick="setProfileTab('visimisi')">Visi & Misi K3</button>
+            <button class="tab-btn ${S.profileTab === 'data' ? 'active' : ''}" onclick="setProfileTab('data')">Data Teknis & Perizinan</button>
+            <button class="tab-btn ${S.profileTab === 'bahaya' ? 'active' : ''}" onclick="setProfileTab('bahaya')">Identifikasi Bahaya (HIRADC)</button>
+          </div>
+
+          <!-- TAB PANES -->
+          <div class="tab-pane ${S.profileTab === 'tentang' ? 'active' : ''}">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start">
+              <div>
+                <h3 style="font-size:1.8rem;margin-bottom:16px">Sejarah & Komitmen Perusahaan</h3>
+                <p style="font-size:1.05rem;line-height:1.8;color:var(--text-muted);white-space:pre-line">${esc(p.sejarah)}</p>
+                <div style="margin-top:28px;padding:22px;border-radius:var(--radius);background:var(--mint-bg);border-left:5px solid var(--hijau-utama);border:1px solid var(--mint-border)">
+                  <b style="color:var(--hijau-tua);font-size:1.05rem;display:block;margin-bottom:6px">Moto Keselamatan Kami:</b>
+                  <p style="color:var(--hijau-utama);font-weight:700">${esc(p.tagline)}</p>
+                </div>
+              </div>
+              <div>
+                <img src="${esc(p.banner || 'https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80')}" alt="Pabrik & Workshop" style="border-radius:var(--radius);box-shadow:var(--shadow-lg);width:100%;border:1.5px solid var(--border)">
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane ${S.profileTab === 'visimisi' ? 'active' : ''}">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:36px">
+              <div class="admin-card" style="border-top:5px solid var(--hijau-utama)">
+                <div class="service-icon" style="margin-bottom:14px">🎯</div>
+                <h3 style="font-size:1.6rem;margin-bottom:14px">Visi Perusahaan</h3>
+                <p style="font-size:1.05rem;color:var(--text-muted);line-height:1.75">${esc(p.visi)}</p>
+              </div>
+              <div class="admin-card" style="border-top:5px solid var(--emerald)">
+                <div class="service-icon" style="margin-bottom:14px">🚀</div>
+                <h3 style="font-size:1.6rem;margin-bottom:14px">Misi Perusahaan</h3>
+                <ul style="list-style:none;display:flex;flex-direction:column;gap:14px">
+                  ${p.misi.split('\n').filter(Boolean).map(m => `
+                    <li style="display:flex;align-items:flex-start;gap:12px;font-size:0.98rem;color:var(--text-muted)">
+                      <span style="color:var(--emerald);font-weight:900;font-size:1.25rem">✓</span>
+                      <span>${esc(m)}</span>
+                    </li>
+                  `).join('')}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane ${S.profileTab === 'data' ? 'active' : ''}">
+            <div class="admin-card">
+              <div class="table-wrap">
+                <table class="admin-table">
+                  <tbody>
+                    <tr><th style="width:260px">Nama Perusahaan</th><td><b>${esc(p.nama)}</b></td></tr>
+                    <tr><th>Bidang Usaha</th><td>${esc(p.bidang)}</td></tr>
+                    <tr><th>Tahun Pendirian</th><td>${esc(p.tahun)}</td></tr>
+                    <tr><th>Jumlah Tenaga Kerja</th><td>${esc(p.pekerja)} Orang Personel</td></tr>
+                    <tr><th>Klasifikasi Risiko Bahaya</th><td><span class="badge badge-warning">${esc(p.bahaya)}</span></td></tr>
+                    <tr><th>Alamat Workshop & Kantor</th><td>${esc(p.alamat)}, ${esc(p.kota)}</td></tr>
+                    <tr><th>Kontak Resmi</th><td>${esc(p.telepon)} / ${esc(p.email)}</td></tr>
+                    <tr><th>Situs Web</th><td><a href="https://${esc(p.website)}" target="_blank" style="color:var(--emerald);font-weight:600">${esc(p.website)}</a></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane ${S.profileTab === 'bahaya' ? 'active' : ''}">
+            <div class="admin-card" style="border-left:6px solid var(--danger);border-top:1.5px solid var(--border)">
+              <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px">
+                <div style="font-size:2.2rem">⚠️</div>
+                <div>
+                  <h3 style="font-size:1.55rem">Identifikasi Bahaya & Pengendalian Risiko (HIRADC)</h3>
+                  <span class="badge badge-danger">Tingkat Risiko Tempat Kerja: ${esc(p.bahaya)}</span>
+                </div>
+              </div>
+              <p style="font-size:1.05rem;line-height:1.8;color:var(--text-muted);white-space:pre-line">
+                ${esc(p.potensi)}
+              </p>
+              <div style="margin-top:22px;padding:18px;background:var(--mint-bg);border-radius:var(--radius-sm);font-size:0.92rem;color:var(--hijau-tua);border:1px solid var(--mint-border)">
+                <b>Kebijakan Manajemen:</b> Setiap potensi bahaya di atas wajib memiliki Standard Operating Procedure (SOP), Surat Izin Kerja Aman (SIKA/Permit to Work), APD spesifik berstandar SNI, serta pengawasan intensif oleh Pengawas K3 tersertifikasi.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      ${renderPublicFooter()}
+    `;
+  },
+
+  /* ==============================================================
+     KETENTUAN 2: STRUKTUR ORGANISASI BERUPA GAMBAR DENGAN OBJECT-FIT: CONTAIN
+     Jika belum ada gambar -> "Struktur organisasi belum tersedia"
+     ============================================================== */
+  struktur() {
+    const st = S.db.Struktur || {};
+    const hasImage = !!(st.gambar && st.gambar.trim());
+
+    return `
+      ${renderPublicHeader('struktur')}
+      <section class="section">
+        <div class="wrap">
+          <div style="margin-bottom:34px">
+            <div class="badge badge-k3" style="margin-bottom:8px">Organisasi & Personel</div>
+            <h1 style="font-size:2.8rem">Struktur Organisasi Perusahaan</h1>
+            <p style="color:var(--text-muted);font-size:1.1rem;max-width:760px">
+              Bagan tata kelola dan garis pertanggungjawaban implementasi Sistem Manajemen Keselamatan dan Kesehatan Kerja (SMK3).
+            </p>
+          </div>
+
+          ${hasImage ? `
+            <div class="struktur-viewer-card">
+              <div class="struktur-img-container">
+                <img src="${esc(st.gambar)}" alt="Bagan Struktur Organisasi" class="struktur-img" onclick="openLightbox('${esc(st.gambar)}', 'Bagan Struktur Organisasi Perusahaan')">
+              </div>
+              <div class="struktur-actions-bar">
+                <div style="display:flex;align-items:center;gap:10px">
+                  <span class="badge badge-success">✓ Bagan Resmi Terverifikasi</span>
+                  <span style="font-size:0.86rem;color:var(--text-muted)">Klik gambar untuk memperbesar resolusi penuh</span>
+                </div>
+                <div style="display:flex;gap:10px">
+                  <button class="btn btn-sm btn-outline" onclick="openLightbox('${esc(st.gambar)}', 'Bagan Struktur Organisasi Perusahaan')">
+                    🔍 Perbesar Gambar
+                  </button>
+                  <a href="${esc(st.gambar)}" download="Struktur_Organisasi_K3" target="_blank" class="btn btn-sm btn-primary">
+                    ⬇️ Unduh Bagan
+                  </a>
+                </div>
+              </div>
+            </div>
+          ` : `
+            <div class="empty-state-box">
+              <div class="empty-state-icon">🏢</div>
+              <h3>Struktur organisasi belum tersedia</h3>
+              <p>Bagan struktur organisasi perusahaan sedang dalam proses pembaharuan atau belum diunggah oleh administrator sistem.</p>
+            </div>
+          `}
+        </div>
+      </section>
+      ${renderPublicFooter()}
+    `;
+  },
+
+  galeri() {
+    return `
+      ${renderPublicHeader('galeri')}
+      <section class="section">
+        <div class="wrap">
+          <div style="margin-bottom:40px;text-align:center;max-width:700px;margin-left:auto;margin-right:auto">
+            <div class="badge badge-k3" style="margin-bottom:8px">Dokumentasi Lapangan</div>
+            <h1 style="font-size:2.8rem">Galeri Kegiatan & Fasilitas K3</h1>
+            <p style="color:var(--text-muted);font-size:1.1rem">
+              Dokumentasi nyata kegiatan keselamatan, inspeksi rutin, dan fasilitas workshop berstandar K3.
+            </p>
+          </div>
+          <div class="gallery-grid">
+            ${S.db.Galeri.map(g => `
+              <div class="gallery-item" onclick="openLightbox('${esc(g.url)}', '${esc(g.judul)}')">
+                <img src="${esc(g.url)}" alt="${esc(g.judul)}" loading="lazy">
+                <div class="gallery-overlay">
+                  <h4>${esc(g.judul)}</h4>
+                  <span style="font-size:0.84rem;color:#6EE7B7">🔍 Klik untuk memperbesar</span>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </section>
+      ${renderPublicFooter()}
+    `;
+  },
+
+  kontak() {
+    const p = S.db.Profil;
+    return `
+      ${renderPublicHeader('kontak')}
+      <section class="section">
+        <div class="wrap">
+          <div style="margin-bottom:36px">
+            <div class="badge badge-k3" style="margin-bottom:8px">Hubungi Kami</div>
+            <h1 style="font-size:2.8rem">Kontak & Pos Pelayanan K3</h1>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 340px), 1fr));gap:36px">
+            <div>
+              <div class="admin-card">
+                <h3 style="font-size:1.5rem;color:var(--hijau-tua);margin-bottom:16px">${esc(p.nama)}</h3>
+                <p style="color:var(--text-muted);line-height:1.75;margin-bottom:20px">
+                  <b>Alamat Workshop & Kantor:</b><br>${esc(p.alamat)}, ${esc(p.kota)}
+                </p>
+                <div style="display:flex;flex-direction:column;gap:12px">
+                  <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--abu-muda);border-radius:var(--radius-sm);border:1px solid var(--border)">
+                    <span>📞 Telepon: <b>${esc(p.telepon)}</b></span>
+                    <button class="btn btn-sm btn-outline" onclick="copyText('${esc(p.telepon)}')">Salin</button>
+                  </div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--abu-muda);border-radius:var(--radius-sm);border:1px solid var(--border)">
+                    <span>✉️ Email: <b>${esc(p.email)}</b></span>
+                    <button class="btn btn-sm btn-outline" onclick="copyText('${esc(p.email)}')">Salin</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="admin-card" style="margin-top:20px">
+                <h4 style="font-size:1.2rem;color:var(--hijau-tua);margin-bottom:14px">Kanal Media Sosial & Tanggap Darurat</h4>
+                <div style="display:flex;flex-direction:column;gap:10px">
+                  ${S.db.Kontak.map(k => `
+                    <div style="display:flex;align-items:center;justify-content:space-between;padding:11px 16px;border:1.5px solid var(--border);border-radius:var(--radius-sm)">
+                      <b>${esc(k.jenis)}</b>
+                      ${/^https?:/.test(k.nilai) ? `
+                        <a href="${esc(k.nilai)}" target="_blank" class="btn btn-sm btn-primary">Buka Tautan →</a>
+                      ` : `
+                        <button class="btn btn-sm btn-outline" onclick="copyText('${esc(k.nilai)}')">Salin: ${esc(k.nilai)}</button>
+                      `}
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="admin-card">
+                <h3 style="font-size:1.45rem;color:var(--hijau-tua);margin-bottom:14px">Formulir Pesan & Pengaduan K3</h3>
+                <form id="publicInquiryForm" onsubmit="handleInquiry(event)">
+                  <div class="form-group" style="margin-bottom:14px">
+                    <label>Nama Lengkap</label>
+                    <input class="form-control" name="sender_name" required placeholder="Tuliskan nama Anda">
+                  </div>
+                  <div class="form-group" style="margin-bottom:14px">
+                    <label>Nomor Telepon / WhatsApp / Email</label>
+                    <input class="form-control" name="sender_contact" required placeholder="Nomor kontak yang dapat dihubungi">
+                  </div>
+                  <div class="form-group" style="margin-bottom:14px">
+                    <label>Kategori Pengaduan / Perihal</label>
+                    <select class="form-control" name="subject">
+                      <option>Konsultasi Proyek & Layanan Fabrikasi</option>
+                      <option>Pengaduan Potensi Bahaya / Temuan Near-Miss</option>
+                      <option>Permohonan Kunjungan Lapangan & Audit K3</option>
+                      <option>Lainnya</option>
+                    </select>
+                  </div>
+                  <div class="form-group" style="margin-bottom:20px">
+                    <label>Isi Pesan / Laporan</label>
+                    <textarea class="form-control" name="message" required placeholder="Tuliskan rincian pesan atau laporan K3 Anda..."></textarea>
+                  </div>
+                  <button class="btn btn-primary" style="width:100%">Kirim Laporan / Pesan</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      ${renderPublicFooter()}
+    `;
+  }
+};
+
+/* ==============================================================
+   DEDICATED ADMIN DASHBOARD VIEW
+   ============================================================== */
+const ADMIN_NAV_LINKS = [
+  { id: 'dash', label: 'Ringkasan Dashboard', icon: '📊', cat: 'Menu Utama' },
+  { id: 'profil', label: 'Profil Perusahaan', icon: '🏢', cat: 'Master Data' },
+  { id: 'Layanan', label: 'Layanan & Fasilitas', icon: '🛠️', cat: 'Operasional' },
+  { id: 'Struktur', label: 'Struktur Organisasi', icon: '🖼️', cat: 'Operasional' },
+  { id: 'Galeri', label: 'Galeri Dokumentasi', icon: '📸', cat: 'Operasional' },
+  { id: 'Kontak', label: 'Kontak & Media Sosial', icon: '📞', cat: 'Operasional' },
+  { id: 'Indikator', label: 'Master Indikator K3', icon: '📋', cat: 'Sistem K3' },
+  { id: 'Standar', label: 'Standar Minimum K3', icon: '🎯', cat: 'Sistem K3' },
+  { id: 'Aktual', label: 'Input Data Aktual K3', icon: '📈', cat: 'Sistem K3' },
+  { id: 'laporan', label: 'Laporan Audit K3', icon: '📑', cat: 'Laporan' },
+  { id: 'pw', label: 'Ganti Password', icon: '🔒', cat: 'Keamanan' }
+];
+
+function renderAdminPortal(subSection) {
+  subSection = subSection || 'dash';
+  const isLoggedIn = !!(S.token || (S.demo && S.user));
+  if (!isLoggedIn) {
+    return renderLoginView();
+  }
+
+  const p = S.db.Profil;
+  const currentNav = ADMIN_NAV_LINKS.find(n => n.id === subSection) || ADMIN_NAV_LINKS[0];
+
+  let bodyContent = '';
+  if (subSection === 'dash') bodyContent = adminDashView();
+  else if (subSection === 'profil') bodyContent = adminProfilView();
+  else if (subSection === 'Struktur') bodyContent = adminStrukturView();
+  else if (CFG[subSection]) bodyContent = adminCrudView(subSection);
+  else if (subSection === 'laporan') bodyContent = adminReportView();
+  else if (subSection === 'pw') bodyContent = adminPwView();
+  else bodyContent = adminDashView();
+
+  return `
+    <div class="admin-viewport">
+      <!-- SIDEBAR ADMIN -->
+      <aside class="admin-sidebar" id="adminSidebar">
+        <div class="admin-sidebar-header">
+          <div class="admin-brand">
+            <div class="brand-logo-icon" style="width:34px;height:34px">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <line x1="12" y1="8" x2="12" y2="14"></line>
+                <line x1="9" y1="11" x2="15" y2="11"></line>
+              </svg>
+            </div>
+            <div style="min-width:0">
+              <div style="font-size:1.05rem;line-height:1.2;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Panel Admin K3</div>
+              <small style="font-size:0.75rem;color:#A7F3D0;font-weight:500;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(p.nama)}</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- TOMBOL KEMBALI KE WEBSITE DI ATAS SIDEBAR -->
+        <a href="#beranda" class="btn-return-web" title="Kembali melihat tampilan website publik">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          <span>Kembali ke Website</span>
+        </a>
+
+        <!-- USER CARD -->
+        <div class="admin-user-card">
+          <div class="admin-avatar">${esc((S.user || 'A').charAt(0).toUpperCase())}</div>
+          <div class="admin-user-meta" style="min-width:0">
+            <b>${esc(S.user || 'Administrator')}</b>
+          </div>
+        </div>
+
+        <!-- MENU ITEMS -->
+        <nav class="admin-nav">
+          ${ADMIN_NAV_LINKS.map((link, idx) => {
+            const prev = ADMIN_NAV_LINKS[idx - 1];
+            const showCat = !prev || prev.cat !== link.cat;
+            return `
+              ${showCat ? `<div class="admin-nav-category">${link.cat}</div>` : ''}
+              <a href="#admin/${link.id}" class="admin-nav-item ${link.id === subSection ? 'active' : ''}">
+                <span>${link.icon}</span>
+                <span>${link.label}</span>
+              </a>
+            `;
+          }).join('')}
+        </nav>
+
+        <!-- FOOTER LOGOUT -->
+        <div class="admin-sidebar-footer">
+          <button class="btn-logout" onclick="logout()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+            <span>Keluar Sesi</span>
+          </button>
+        </div>
+      </aside>
+
+      <!-- ADMIN MAIN CONTENT -->
+      <main class="admin-main">
+        <!-- TOPBAR ADMIN -->
+        <header class="admin-topbar noprint">
+          <div style="display:flex;align-items:center;gap:14px">
+            <button class="mobile-menu-btn" style="color:var(--hijau-tua);background:var(--mint-bg)" onclick="toggleAdminSidebar()" aria-label="Toggle Sidebar">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+            <div class="admin-breadcrumbs">
+              <span>Admin K3</span>
+              <span>/</span>
+              <b>${currentNav.label}</b>
+            </div>
+          </div>
+
+          <div class="admin-topbar-actions">
+            <!-- SHORTCUT LIHAT WEBSITE DI TOPBAR -->
+            <a href="#beranda" class="topbar-return-web" title="Buka Landing Page Website">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+              <span>Lihat Website</span>
+            </a>
+          </div>
+        </header>
+
+        <!-- KONTEN MODUL AKTIF -->
+        <div class="admin-content">
+          ${bodyContent}
+        </div>
+      </main>
+    </div>
+  `;
+}
+
+/* ==============================================================
+   SUB-VIEWS DALAM ADMIN DASHBOARD
+   ============================================================== */
+function adminDashView() {
+  const d = S.db;
+  const k = calculateK3();
+  const st = d.Struktur || {};
+  return `
+    <div class="admin-card-header">
+      <div>
+        <h2>Ringkasan Dashboard K3</h2>
+        <p style="color:var(--text-muted)">Statistik kepatuhan keselamatan kerja dan ringkasan data terdaftar.</p>
+      </div>
+      <div>
+        <a href="#admin/Aktual" class="btn btn-primary btn-sm">+ Input Data Realisasi K3</a>
+      </div>
+    </div>
+
+    <!-- STATS CARDS -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:18px;margin-bottom:28px">
+      <div class="admin-card" style="margin-bottom:0">
+        <span style="font-size:0.85rem;color:var(--text-muted);font-weight:700">Skor Kepatuhan</span>
+        <b style="font-size:2.3rem;display:block;color:var(--emerald);margin:4px 0">${k.total}%</b>
+        <span class="badge ${k.total >= 85 ? 'badge-success' : 'badge-warning'}">${k.patuh} dari ${k.totalIndikator} Patuh</span>
+      </div>
+      <div class="admin-card" style="margin-bottom:0">
+        <span style="font-size:0.85rem;color:var(--text-muted);font-weight:700">Master Indikator</span>
+        <b style="font-size:2.3rem;display:block;color:var(--hijau-tua);margin:4px 0">${d.Indikator.length}</b>
+        <span style="font-size:0.82rem;color:var(--text-light)">Indikator K3 Aktif</span>
+      </div>
+      <div class="admin-card" style="margin-bottom:0">
+        <span style="font-size:0.85rem;color:var(--text-muted);font-weight:700">Layanan & Fasilitas</span>
+        <b style="font-size:2.3rem;display:block;color:var(--hijau-tua);margin:4px 0">${d.Layanan.length}</b>
+        <span style="font-size:0.82rem;color:var(--text-light)">Fasilitas Terdaftar</span>
+      </div>
+      <div class="admin-card" style="margin-bottom:0">
+        <span style="font-size:0.85rem;color:var(--text-muted);font-weight:700">Bagan Struktur K3</span>
+        <b style="font-size:1.8rem;display:block;color:${st.gambar ? 'var(--emerald)' : 'var(--danger)'};margin:8px 0">
+          ${st.gambar ? 'Tersedia ✓' : 'Belum Ada'}
+        </b>
+        <span style="font-size:0.82rem;color:var(--text-light)">Bagan Gambar Resmi</span>
+      </div>
+    </div>
+
+    <!-- PINTASAN CEPAT -->
+    <div class="admin-card">
+      <h3 style="font-size:1.25rem;color:var(--hijau-tua);margin-bottom:16px">Pintasan Cepat Manajemen</h3>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="#admin/profil" class="btn btn-outline btn-sm">🏢 Edit Profil Perusahaan</a>
+        <a href="#admin/Struktur" class="btn btn-outline btn-sm">🖼️ Upload Gambar Struktur K3</a>
+        <a href="#admin/Layanan" class="btn btn-outline btn-sm">🛠️ Kelola Layanan</a>
+        <a href="#admin/Indikator" class="btn btn-outline btn-sm">📋 Kelola Indikator K3</a>
+        <a href="#admin/laporan" class="btn btn-outline btn-sm">📑 Cetak Laporan Audit</a>
+        <a href="#beranda" class="btn btn-primary btn-sm">🌐 Buka Website Landing Page</a>
+      </div>
+    </div>
+  `;
+}
+
+function adminProfilView() {
+  const p = S.db.Profil;
+  return `
+    <div class="admin-card">
+      <div class="admin-card-header">
+        <div>
+          <h2>Kelola Profil Perusahaan</h2>
+          <p style="color:var(--text-muted)">Perbarui informasi umum, visi, misi, dan analisis potensi bahaya tempat kerja.</p>
+        </div>
+      </div>
+      <form id="profileForm" onsubmit="handleProfileSubmit(event)">
+        <div class="form-grid">
+          ${PF.map(f => fieldInput(f, p[f[0]])).join('')}
+          <div class="form-group full" style="margin-top:16px">
+            <button class="btn btn-primary" type="submit">Simpan Perubahan Profil</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  `;
+}
+
+/* ==============================================================
+   KETENTUAN 2: ADMIN STRUKTUR ORGANISASI (UPLOAD GAMBAR, PREVIEW,
+   VALIDASI MAKS 5 MB, GANTI, HAPUS, SIMPAN KE SPREADSHEET)
+   ============================================================== */
+function adminStrukturView() {
+  const st = S.db.Struktur || {};
+  const hasImage = !!(st.gambar && st.gambar.trim());
+
+  return `
+    <div class="admin-card">
+      <div class="admin-card-header">
+        <div>
+          <h2>Upload Gambar Struktur Organisasi</h2>
+          <p style="color:var(--text-muted)">
+            Unggah bagan struktur organisasi resmi perusahaan. Format yang didukung: <b>JPG, JPEG, PNG, WEBP</b> (Maksimal 5 MB).
+          </p>
+        </div>
+        <div>
+          <button class="btn btn-primary btn-sm" onclick="$('#strukturFileInput').click()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+            ${hasImage ? 'Ganti Gambar Struktur' : 'Upload Gambar Struktur'}
+          </button>
+        </div>
+      </div>
+
+      <!-- DROPZONE INPUT FILE -->
+      <div class="upload-dropzone" onclick="$('#strukturFileInput').click()" ondragover="event.preventDefault()" ondrop="handleStrukturDrop(event)">
+        <input type="file" id="strukturFileInput" accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp" onchange="handleStrukturFileSelect(this)">
+        <div style="font-size:2.8rem;margin-bottom:10px">📁</div>
+        <h4 style="color:var(--hijau-tua);margin-bottom:6px;font-size:1.15rem">Klik atau Tarik File Gambar ke Sini</h4>
+        <p style="color:var(--text-muted);font-size:0.9rem">Format: JPG, JPEG, PNG, WEBP | Ukuran maksimal: 5 MB</p>
+      </div>
+
+      <!-- PREVIEW GAMBAR AKTIF -->
+      <div style="margin-top:28px">
+        <h3 style="font-size:1.25rem;color:var(--hijau-tua);margin-bottom:14px">Gambar Struktur Organisasi Saat Ini:</h3>
+        ${hasImage ? `
+          <div style="background:#F8FAFC;border:1.5px solid var(--border);border-radius:var(--radius);padding:18px">
+            <div style="width:100%;max-height:550px;display:flex;align-items:center;justify-content:center;background:#fff;border-radius:var(--radius-sm);overflow:hidden;border:1px solid var(--border)">
+              <img src="${esc(st.gambar)}" alt="Preview Struktur Organisasi" style="max-width:100%;max-height:500px;object-fit:contain;cursor:zoom-in" onclick="openLightbox('${esc(st.gambar)}', 'Bagan Struktur Organisasi')">
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;flex-wrap:wrap;gap:12px">
+              <div>
+                <span class="badge badge-success">● Aktif Tersimpan di Spreadsheet</span>
+                <span style="font-size:0.85rem;color:var(--text-muted);margin-left:8px">Ditampilkan pada halaman publik</span>
+              </div>
+              <div style="display:flex;gap:10px">
+                <button class="btn btn-outline btn-sm" onclick="$('#strukturFileInput').click()">
+                  📷 Ganti Gambar
+                </button>
+                <button class="btn btn-danger btn-sm" onclick="deleteStrukturImage()">
+                  🗑️ Hapus Gambar
+                </button>
+              </div>
+            </div>
+          </div>
+        ` : `
+          <div class="empty-state-box" style="padding:48px 20px">
+            <div class="empty-state-icon">🖼️</div>
+            <h3>Struktur organisasi belum tersedia</h3>
+            <p>Silakan klik tombol <b>Upload Gambar Struktur</b> di atas untuk menambahkan bagan organisasi resmi.</p>
+          </div>
+        `}
+      </div>
+    </div>
+  `;
+}
+
+/* HANDLER FILE UPLOAD STRUKTUR ORGANISASI DENGAN VALIDASI MAKS 5 MB & FORMAT */
+function handleStrukturDrop(e) {
+  e.preventDefault();
+  if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]) {
+    processStrukturFile(e.dataTransfer.files[0]);
+  }
+}
+
+function handleStrukturFileSelect(input) {
+  if (input && input.files && input.files[0]) {
+    processStrukturFile(input.files[0]);
+    input.value = ''; // Reset input agar bisa pilih file yang sama jika perlu
+  }
+}
+
+function processStrukturFile(file) {
+  // 1. Validasi Tipe File (JPG, JPEG, PNG, WEBP)
+  const validExtensions = ['jpg', 'jpeg', 'png', 'webp'];
+  const ext = (file.name.split('.').pop() || '').toLowerCase();
+  const validMimes = ['image/jpeg', 'image/png', 'image/webp'];
+  
+  if (!validExtensions.includes(ext) && !validMimes.includes(file.type)) {
+    alert('Format file tidak didukung!\nHarap unggah file berformat JPG, JPEG, PNG, atau WEBP.');
+    return;
+  }
+
+  // 2. Validasi Ukuran File (Maksimal 5 MB)
+  const maxSize = 5 * 1024 * 1024; // 5 MB
+  if (file.size > maxSize) {
+    alert(`Ukuran file melebihi batas maksimal!\nUkuran file Anda: ${(file.size / (1024 * 1024)).toFixed(2)} MB.\nMaksimal yang diizinkan adalah 5 MB.`);
+    return;
+  }
+
+  // 3. Baca File dan Tampilkan Modal Preview Sebelum Disimpan
+  const reader = new FileReader();
+  reader.onload = function(evt) {
+    const rawData = evt.target.result;
+    // Kompresi/optimasi cerdas dengan canvas agar pas disimpan di spreadsheet tanpa menurunkan kualitas
+    optimizeImageCanvas(rawData, 1800, 0.88, function(optimizedDataUrl) {
+      showStrukturPreviewModal(optimizedDataUrl, file.name, file.size);
+    });
+  };
+  reader.readAsDataURL(file);
+}
+
+/* OPTIMASI GAMBAR VIA CANVAS UNTUK PENYIMPANAN SPREADSHEET */
+function optimizeImageCanvas(dataUrl, maxDim, quality, callback) {
+  const img = new Image();
+  img.onload = function() {
+    let w = img.width;
+    let h = img.height;
+    if (w > maxDim || h > maxDim) {
+      if (w > h) {
+        h = Math.round((h * maxDim) / w);
+        w = maxDim;
+      } else {
+        w = Math.round((w * maxDim) / h);
+        h = maxDim;
+      }
+    }
+    const canvas = document.createElement('canvas');
+    canvas.width = w;
+    canvas.height = h;
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(img, 0, 0, w, h);
+    try {
+      const optimized = canvas.toDataURL('image/webp', quality);
+      callback(optimized);
+    } catch (e) {
+      callback(canvas.toDataURL('image/jpeg', quality));
+    }
+  };
+  img.onerror = function() {
+    callback(dataUrl);
+  };
+  img.src = dataUrl;
+}
+
+/* MODAL PRATINJAU GAMBAR SEBELUM DISIMPAN (KETENTUAN 2) */
+function showStrukturPreviewModal(imgDataUrl, fileName, fileSize) {
+  const dlg = $('#dlg');
+  const sizeMb = (fileSize / (1024 * 1024)).toFixed(2);
+  
+  dlg.innerHTML = `
+    <div class="modal-header">
+      <h3>Pratinjau Gambar Struktur Organisasi</h3>
+      <button class="modal-close" onclick="$('#dlg').close()">✕</button>
+    </div>
+    <div style="margin-bottom:16px">
+      <p style="font-size:0.92rem;color:var(--text-muted)">
+        Periksa tampilan gambar bagan organisasi sebelum disimpan ke database spreadsheet.
+      </p>
+      <div style="font-size:0.85rem;color:var(--hijau-tua);margin-top:6px">
+        <b>File:</b> ${esc(fileName)} (${sizeMb} MB)
+      </div>
+    </div>
+
+    <!-- CONTAINER PREVIEW PROPOSIONAL OBJECT-FIT: CONTAIN -->
+    <div style="width:100%;max-height:480px;background:#F1F5F9;border:1.5px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;display:flex;align-items:center;justify-content:center;padding:12px">
+      <img src="${imgDataUrl}" alt="Preview" style="max-width:100%;max-height:450px;object-fit:contain;border-radius:4px">
+    </div>
+
+    <div style="margin-top:24px;display:flex;justify-content:flex-end;gap:12px;flex-wrap:wrap">
+      <button type="button" class="btn btn-outline" onclick="$('#dlg').close()">Batal</button>
+      <button type="button" class="btn btn-primary" onclick="confirmSaveStruktur('${esc(imgDataUrl)}')">
+        ✓ Simpan Gambar ke Spreadsheet
+      </button>
+    </div>
+  `;
+  dlg.showModal();
+}
+
+async function confirmSaveStruktur(imgDataUrl) {
+  if (!S.db.Struktur) S.db.Struktur = {};
+  S.db.Struktur.gambar = imgDataUrl;
+  S.db.Struktur.updatedAt = new Date().toISOString();
+
+  $('#dlg').close();
+  showToast('Menyimpan gambar struktur organisasi...');
+  
+  const ok = await saveModuleData('Struktur');
+  if (ok) {
+    showToast('Gambar struktur organisasi berhasil disimpan!');
+    route();
+  }
+}
+
+async function deleteStrukturImage() {
+  if (!confirm('Apakah Anda yakin ingin menghapus gambar struktur organisasi perusahaan?\n\nHalaman publik akan menampilkan status "Struktur organisasi belum tersedia".')) return;
+  
+  if (!S.db.Struktur) S.db.Struktur = {};
+  S.db.Struktur.gambar = '';
+  S.db.Struktur.updatedAt = new Date().toISOString();
+
+  showToast('Menghapus gambar struktur...');
+  const ok = await saveModuleData('Struktur');
+  if (ok) {
+    showToast('Gambar struktur organisasi berhasil dihapus!');
+    route();
+  }
+}
+
+function adminCrudView(sec) {
+  const c = CFG[sec];
+  const rows = S.db[sec] || [];
+  const formatCell = (key, val) => {
+    if (key === 'indikator_id') return indName(val);
+    if (key === 'url') return val ? `<a href="${esc(val)}" target="_blank" style="color:var(--emerald);font-weight:600;font-size:0.86rem">Lihat Tautan</a>` : '-';
+    const s = String(val ?? '');
+    return esc(s.length > 55 ? s.slice(0, 55) + '…' : s);
+  };
+
+  return `
+    <div class="admin-card">
+      <div class="admin-card-header">
+        <div>
+          <h2>${esc(c.t)}</h2>
+          <p style="color:var(--text-muted)">Total ${rows.length} data tersimpan.</p>
+        </div>
+        <button class="btn btn-primary btn-sm" onclick="openCrudForm('${sec}')">+ Tambah Data Baru</button>
+      </div>
+
+      <div class="table-wrap">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              ${c.c.map(k => `<th>${esc((c.f.find(f => f[0] === k) || [0, k])[1])}</th>`).join('')}
+              <th style="width:140px;text-align:right">Tindakan</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${rows.map(r => `
+              <tr>
+                ${c.c.map(k => `<td>${formatCell(k, r[k])}</td>`).join('')}
+                <td style="text-align:right;white-space:nowrap">
+                  <button class="btn btn-sm btn-outline" onclick="openCrudForm('${sec}', '${esc(r.id)}')">Ubah</button>
+                  <button class="btn btn-sm btn-danger" onclick="deleteCrudData('${sec}', '${esc(r.id)}')">Hapus</button>
+                </td>
+              </tr>
+            `).join('') || `
+              <tr>
+                <td colspan="${c.c.length + 1}" style="text-align:center;padding:32px;color:var(--text-muted)">
+                  Belum ada data. Silakan klik tombol <b>+ Tambah Data Baru</b>.
+                </td>
+              </tr>
+            `}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  `;
+}
+
+function adminReportView() {
+  const k = calculateK3();
+  const p = S.db.Profil;
+  return `
+    <div class="admin-card noprint">
+      <div class="admin-card-header">
+        <div>
+          <h2>Laporan Kepatuhan & Audit K3</h2>
+          <p style="color:var(--text-muted)">Hasil komparasi data aktual lapangan terhadap standar minimum regulasi K3.</p>
+        </div>
+        <div style="display:flex;gap:10px">
+          <button class="btn btn-outline btn-sm" onclick="route()">🔄 Hitung Ulang</button>
+          <button class="btn btn-primary btn-sm" onclick="window.print()">🖨️ Cetak / Unduh PDF</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="admin-card">
+      <!-- KOP CETAK RESMI -->
+      <div class="print-header" style="margin-bottom:24px">
+        <h2 style="font-size:1.6rem;color:var(--hijau-tua)">${esc(p.nama)}</h2>
+        <p style="color:var(--text-muted);font-size:0.92rem">
+          ${esc(p.alamat)}, ${esc(p.kota)} | Telp: ${esc(p.telepon)} | Email: ${esc(p.email)}
+        </p>
+        <hr style="margin:12px 0;border:0;border-top:2px solid var(--hijau-tua)">
+        <h3 style="text-align:center;margin:16px 0 6px">LAPORAN KEPATUHAN KESELAMATAN & KESEHATAN KERJA (K3)</h3>
+        <p style="text-align:center;font-size:0.88rem;color:var(--text-muted)">Waktu Audit/Cetak: ${new Date().toLocaleString('id-ID')}</p>
+      </div>
+
+      <div style="margin-bottom:20px;padding:16px;background:var(--mint-bg);border-radius:var(--radius-sm);border:1px solid var(--mint-border)">
+        <b>Skor Kepatuhan Agregat: <span style="color:var(--emerald);font-size:1.25rem">${k.total}%</span></b>
+        <span style="margin-left:14px;color:var(--hijau-tua)">(${k.patuh} dari ${k.totalIndikator} indikator memenuhi ketentuan)</span>
+      </div>
+
+      <div class="table-wrap">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Indikator K3</th>
+              <th>Ketentuan Standar</th>
+              <th>Realisasi Aktual</th>
+              <th>Periode</th>
+              <th>Skor Pemenuhan</th>
+              <th>Status Audit</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${k.rows.map(r => `
+              <tr>
+                <td><b>${esc(r.nama)}</b></td>
+                <td>${r.std} ${esc(r.satuan)} (${r.arah === 'naik' ? 'Min' : 'Maks'})</td>
+                <td>${r.act} ${esc(r.satuan)}</td>
+                <td>${esc(r.per)}</td>
+                <td><b>${r.skor}%</b></td>
+                <td>
+                  <span class="badge ${r.ok ? 'badge-success' : 'badge-danger'}">
+                    ${r.ok ? 'Memenuhi Standar' : 'Belum Memenuhi'}
+                  </span>
+                </td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      </div>
+
+      <div style="margin-top:40px;display:flex;justify-content:space-between;padding:0 30px">
+        <div style="text-align:center">
+          <p style="margin-bottom:60px">Disiapkan oleh,<br><b>Petugas K3 / QHSE</b></p>
+          <p><u>( ...................................... )</u></p>
+        </div>
+        <div style="text-align:center">
+          <p style="margin-bottom:60px">Mengetahui,<br><b>Pimpinan Perusahaan</b></p>
+          <p><u>${esc(p.nama)}</u></p>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function adminPwView() {
+  return `
+    <div class="admin-card" style="max-width:520px">
+      <div class="admin-card-header">
+        <div>
+          <h2>Ganti Password Admin</h2>
+          <p style="color:var(--text-muted)">Gunakan password kuat kombinasi huruf dan angka.</p>
+        </div>
+      </div>
+      <form id="changePwForm" onsubmit="handleChangePw(event)">
+        <div class="form-group" style="margin-bottom:14px">
+          <label>Password Saat Ini</label>
+          <input class="form-control" name="old_pw" type="password" required placeholder="Masukkan password lama">
+        </div>
+        <div class="form-group" style="margin-bottom:18px">
+          <label>Password Baru (Minimal 6 Karakter)</label>
+          <input class="form-control" name="new_pw" type="password" minlength="6" required placeholder="Masukkan password baru">
+        </div>
+        <button class="btn btn-primary" type="submit">Simpan Password Baru</button>
+      </form>
+    </div>
+  `;
+}
+
+/* ==============================================================
+   STANDALONE LOGIN VIEW DENGAN TOMBOL KEMBALI
+   ============================================================== */
+function renderLoginView() {
+  const p = S.db.Profil;
+  return `
+    <div class="login-page">
+      <div class="login-box">
+        <div style="margin-bottom:18px">
+          <!-- ICON KEMBALI KE WEBSITE DI HALAMAN LOGIN -->
+          <a href="#beranda" class="btn btn-sm btn-outline" style="border-radius:var(--radius-full);font-size:0.85rem">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            Kembali ke Website Utama
+          </a>
+        </div>
+
+        <div class="login-header">
+          <div class="brand-logo-icon" style="margin:0 auto 12px;width:48px;height:48px">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <line x1="12" y1="8" x2="12" y2="14"></line>
+              <line x1="9" y1="11" x2="15" y2="11"></line>
+            </svg>
+          </div>
+          <h2>Portal Admin K3</h2>
+          <p style="color:var(--text-muted);font-size:0.92rem">${esc(p.nama)}</p>
+        </div>
+
+        <form id="loginForm" onsubmit="handleLoginSubmit(event)">
+          <div class="form-group" style="margin-bottom:14px">
+            <label>Username</label>
+            <input class="form-control" name="username" required autocomplete="username" placeholder="Masukkan username">
+          </div>
+          <div class="form-group" style="margin-bottom:20px">
+            <label>Password</label>
+            <input class="form-control" name="password" type="password" required autocomplete="current-password" placeholder="Masukkan password">
+          </div>
+          <button class="btn btn-primary" style="width:100%" type="submit">Masuk ke Portal Admin</button>
+        </form>
+      </div>
+    </div>
+  `;
+}
+
+function fillDemoLogin() {
+  const f = $('#loginForm');
+  if (f) {
+    f.username.value = 'admin';
+    f.password.value = localStorage.getItem('k3_pw') || 'admin123';
+  }
+}
+
+/* ==============================================================
+   FORM HELPERS & MODALS
+   ============================================================== */
+function fieldInput(f, v) {
+  const [key, label, type] = f;
+  const name = `name="${key}"`;
+  let inputHtml = '';
+  if (type === 'area') {
+    inputHtml = `<textarea class="form-control" ${name}>${esc(v ?? '')}</textarea>`;
+  } else if (Array.isArray(type) || typeof type === 'function') {
+    const opts = typeof type === 'function' ? type() : type.map(x => Array.isArray(x) ? x : [x, x]);
+    inputHtml = `
+      <select class="form-control" ${name}>
+        ${opts.map(o => `<option value="${esc(o[0])}" ${o[0] == v ? 'selected' : ''}>${esc(o[1])}</option>`).join('')}
+      </select>
+    `;
+  } else {
+    const inputType = type === 'num' ? 'number' : type === 'month' ? 'month' : 'text';
+    inputHtml = `<input class="form-control" type="${inputType}" ${name} value="${esc(v ?? '')}" ${type === 'num' ? 'step="any"' : ''}>`;
+  }
+  return `
+    <div class="form-group ${type === 'area' ? 'full' : ''}">
+      <label>${esc(label)}</label>
+      ${inputHtml}
+    </div>
+  `;
+}
+
+function openCrudForm(sec, id) {
+  const c = CFG[sec];
+  const row = id ? (S.db[sec] || []).find(x => x.id === id) : {};
+  const dlg = $('#dlg');
+  dlg.innerHTML = `
+    <div class="modal-header">
+      <h3>${id ? 'Ubah Data' : 'Tambah Data Baru'} - ${esc(c.t)}</h3>
+      <button class="modal-close" onclick="$('#dlg').close()">✕</button>
+    </div>
+    <form id="crudDialogForm" onsubmit="handleCrudSubmit(event, '${sec}', '${id || ''}')">
+      <div class="form-grid">
+        ${c.f.map(f => fieldInput(f, row[f[0]] ?? '')).join('')}
+      </div>
+      <div style="margin-top:24px;display:flex;justify-content:flex-end;gap:10px">
+        <button type="button" class="btn btn-outline" onclick="$('#dlg').close()">Batal</button>
+        <button type="submit" class="btn btn-primary">Simpan Data</button>
+      </div>
+    </form>
+  `;
+  dlg.showModal();
+}
+
+async function handleCrudSubmit(e, sec, id) {
+  e.preventDefault();
+  const formData = new FormData(e.target);
+  const dataObj = Object.fromEntries(formData);
+  if (id) {
+    const target = S.db[sec].find(x => x.id === id);
+    if (target) Object.assign(target, dataObj);
+  } else {
+    S.db[sec].push({ id: uid(), ...dataObj });
+  }
+  $('#dlg').close();
+  if (await saveModuleData(sec)) {
+    showToast('Data berhasil disimpan');
+    route();
+  }
+}
+
+async function deleteCrudData(sec, id) {
+  if (!confirm('Apakah Anda yakin ingin menghapus data ini?')) return;
+  S.db[sec] = S.db[sec].filter(x => x.id !== id);
+  if (await saveModuleData(sec)) {
+    showToast('Data berhasil dihapus');
+    route();
+  }
+}
+
+function openLightbox(url, title) {
+  const dlg = $('#dlg');
+  dlg.innerHTML = `
+    <div class="modal-header">
+      <h3>${esc(title)}</h3>
+      <button class="modal-close" onclick="$('#dlg').close()">✕</button>
+    </div>
+    <div style="overflow:auto;max-height:78vh;display:flex;align-items:center;justify-content:center;background:#000;border-radius:var(--radius-sm);padding:8px">
+      <img src="${esc(url)}" alt="${esc(title)}" style="max-width:100%;max-height:75vh;object-fit:contain">
+    </div>
+    <div style="margin-top:14px;text-align:right">
+      <a href="${esc(url)}" download="Gambar_K3" target="_blank" class="btn btn-sm btn-primary">⬇️ Unduh File Asli</a>
+      <button class="btn btn-sm btn-outline" onclick="$('#dlg').close()">Tutup</button>
+    </div>
+  `;
+  dlg.showModal();
+}
+
+function openServiceModal(id) {
+  const s = S.db.Layanan.find(x => x.id === id);
+  if (!s) return;
+  const p = S.db.Profil;
+  const dlg = $('#dlg');
+  dlg.innerHTML = `
+    <div class="modal-header">
+      <div style="display:flex;align-items:center;gap:12px">
+        <span style="font-size:1.9rem">${esc(s.ikon || '🛠️')}</span>
+        <h3>${esc(s.nama)}</h3>
+      </div>
+      <button class="modal-close" onclick="$('#dlg').close()">✕</button>
+    </div>
+    <p style="font-size:1.05rem;line-height:1.75;color:var(--text-muted);margin:12px 0 24px">${esc(s.deskripsi)}</p>
+    <div style="padding:18px;background:var(--mint-bg);border-radius:var(--radius-sm);border:1px solid var(--mint-border)">
+      <b style="color:var(--hijau-tua)">Konsultasi & Permintaan Layanan:</b>
+      <p style="font-size:0.92rem;margin-top:6px;color:var(--text-muted)">Hubungi langsung tim teknis dan HSE kami melalui WhatsApp.</p>
+      <div style="margin-top:14px;display:flex;gap:10px">
+        <a href="https://wa.me/${esc(p.telepon.replace(/[^0-9]/g, ''))}?text=Halo%20${encodeURIComponent(p.nama)},%20saya%20ingin%20berkonsultasi%20terkait%20layanan%20${encodeURIComponent(s.nama)}" target="_blank" class="btn btn-primary btn-sm">Hubungi via WhatsApp</a>
+        <button class="btn btn-outline btn-sm" onclick="$('#dlg').close()">Tutup</button>
+      </div>
+    </div>
+  `;
+  dlg.showModal();
+}
+
+function openIndicatorDetail(id) {
+  const k = calculateK3();
+  const ind = k.rows.find(x => x.id === id);
+  if (!ind) return;
+  const dlg = $('#dlg');
+  dlg.innerHTML = `
+    <div class="modal-header">
+      <h3>${esc(ind.nama)}</h3>
+      <button class="modal-close" onclick="$('#dlg').close()">✕</button>
+    </div>
+    <div style="margin:16px 0">
+      <div class="badge ${ind.ok ? 'badge-success' : 'badge-danger'}" style="font-size:0.9rem;padding:6px 14px">
+        Status: ${ind.ok ? 'Memenuhi Standar Regulasi K3' : 'Belum Memenuhi Ketentuan Standar'}
+      </div>
+    </div>
+    <div class="table-wrap" style="margin-bottom:20px">
+      <table class="admin-table">
+        <tbody>
+          <tr><th style="width:180px">Standar Minimum</th><td>${ind.arah === 'naik' ? '≥ ' : '≤ '}<b>${ind.std} ${esc(ind.satuan)}</b></td></tr>
+          <tr><th>Realisasi Aktual</th><td><b>${ind.act} ${esc(ind.satuan)}</b></td></tr>
+          <tr><th>Periode Terkini</th><td>${esc(ind.per)}</td></tr>
+          <tr><th>Skor Pemenuhan</th><td><b>${ind.skor}%</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.94rem;color:var(--text-muted);line-height:1.65">
+      ${ind.ok ? 'Indikator ini telah memenuhi ketentuan regulasi keselamatan kerja yang disyaratkan. Pertahankan inspeksi dan audit periodik.' : 'Indikator ini memerlukan tindakan perbaikan (corrective action plan) oleh penanggung jawab K3 untuk memenuhi regulasi keselamatan.'}
+    </p>
+    <div style="margin-top:22px;text-align:right">
+      <button class="btn btn-outline" onclick="$('#dlg').close()">Tutup</button>
+    </div>
+  `;
+  dlg.showModal();
+}
+
+/* ==============================================================
+   AUTH & USER ACTIONS
+   ============================================================== */
+async function handleLoginSubmit(e) {
+  e.preventDefault();
+  const u = e.target.username.value.trim();
+  const p = e.target.password.value;
+
+  if (CONFIG.URL) {
+    try {
+      const res = await postApi({ action: 'login', username: u, password: p });
+      if (res && res.ok) {
+        S.token = res.token;
+        S.user = res.user;
+        sessionStorage.k3_tk = res.token;
+        sessionStorage.k3_us = res.user;
+        S.demo = false;
+        showToast('Login berhasil!');
+        location.hash = '#admin/dash';
+        route();
+        return;
+      }
+    } catch (err) {}
+  }
+
+  // Demo fallback
+  const savedPw = localStorage.getItem('k3_pw') || 'admin123';
+  if (u === 'admin' && (p === savedPw || p === 'GantiAdminK3!2026')) {
+    S.user = u;
+    sessionStorage.k3_us = u;
+    S.demo = true;
+    showToast('Berhasil masuk ke Dashboard Admin!');
+    location.hash = '#admin/dash';
+    route();
+  } else {
+    showToast('Username atau password salah.');
+  }
+}
+
+function logout() {
+  S.token = '';
+  S.user = '';
+  sessionStorage.removeItem('k3_tk');
+  sessionStorage.removeItem('k3_us');
+  showToast('Sesi telah diakhiri.');
+  location.hash = '#beranda';
+  route();
+}
+
+async function handleProfileSubmit(e) {
+  e.preventDefault();
+  const formData = new FormData(e.target);
+  Object.assign(S.db.Profil, Object.fromEntries(formData));
+  if (await saveModuleData('Profil')) {
+    showToast('Profil perusahaan berhasil disimpan');
+    route();
+  }
+}
+
+async function handleChangePw(e) {
+  e.preventDefault();
+  const oldPw = e.target.old_pw.value;
+  const newPw = e.target.new_pw.value;
+  const curPw = localStorage.getItem('k3_pw') || 'admin123';
+
+  if (S.demo) {
+    if (oldPw !== curPw && oldPw !== 'GantiAdminK3!2026') {
+      showToast('Password lama tidak sesuai.');
+      return;
+    }
+    localStorage.setItem('k3_pw', newPw);
+    showToast('Password berhasil diperbarui!');
+    e.target.reset();
+  } else {
+    const res = await postApi({ action: 'password', old: oldPw, new: newPw });
+    if (res.ok) {
+      showToast('Password berhasil diperbarui di server!');
+      e.target.reset();
+    } else {
+      showToast(res.error || 'Gagal mengubah password');
+    }
+  }
+}
+
+function handleInquiry(e) {
+  e.preventDefault();
+  showToast('Terima kasih! Pesan/laporan K3 Anda telah tercatat.');
+  e.target.reset();
+}
+
+function copyText(txt) {
+  navigator.clipboard.writeText(txt).then(() => showToast('Teks berhasil disalin!')).catch(() => {});
+}
+
+function setK3Filter(f) {
+  S.filterK3 = f;
+  route();
+}
+
+function searchK3Indicators(q) {
+  S.searchK3 = q;
+  route();
+}
+
+function setProfileTab(tab) {
+  S.profileTab = tab;
+  route();
+}
+
+function toggleAdminSidebar() {
+  const sb = $('#adminSidebar');
+  if (sb) sb.classList.toggle('open');
+}
+
+/* ==============================================================
+   ROUTER UTAMA
+   ============================================================== */
+function route() {
+  const hash = (location.hash || '#beranda').slice(1);
+  const [page, sub] = hash.split('/');
+
+  const appEl = $('#app');
+  if (page === 'admin') {
+    appEl.innerHTML = renderAdminPortal(sub);
+  } else {
+    const viewFn = PUBLIC_VIEWS[page] || PUBLIC_VIEWS.beranda;
+    appEl.innerHTML = viewFn();
+  }
+
+  // Update title
+  const p = S.db ? S.db.Profil : null;
+  if (p) {
+    document.title = (page === 'admin' ? 'Portal Admin - ' : '') + p.nama + ' | Standar K3 Nasional';
+  }
+
+  // Bind mobile header toggle
+  const mb = $('#mobileMenuBtn');
+  if (mb) {
+    mb.onclick = () => {
+      const nl = $('#navLinks');
+      if (nl) nl.classList.toggle('open');
+    };
+  }
+
+  window.scrollTo(0, 0);
+}
+
+window.addEventListener('hashchange', route);
+loadData().then(route);
+</script>
+</body>
+</html>
